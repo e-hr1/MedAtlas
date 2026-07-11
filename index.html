@@ -301,6 +301,7 @@
             position: relative;
             overflow: hidden;
             transition: background 0.5s ease, color 0.5s ease;
+            
         }
 
         .dark-mode .hero {
@@ -326,6 +327,11 @@
             max-width: 900px;
             margin: 0 auto;
         }
+    .hero-icon img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
 
         .hero-icon {
             font-size: 4.5rem;
@@ -865,7 +871,9 @@
     <!-- الهيدر -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-icon">📚</div>
+            <div class="hero-icon">
+    <img src="icon_app.png" alt="App Icon">
+</div>
             <h1 id="heroTitle">مرجع <span class="highlight">الأجهزة الطبية</span> الشامل</h1>
             <p id="heroDesc">
                 MedAtlas هي المنصة التعليمية المتكاملة التي تقدم معلومات علمية دقيقة ومفصلة عن جميع الأجهزة الطبية المستخدمة في المستشفيات والمجال الطبي والهندسة الطبية الحيوية.
@@ -1326,4 +1334,4 @@
         });
     </script>
 </body>
-</html>
+</html> 
