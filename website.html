@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirect</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial,sans-serif;
+    background:#101820;
+    color:white;
+}
+
+.box{
+    text-align:center;
+}
+
+.loader{
+    width:45px;
+    height:45px;
+    border:5px solid #ddd;
+    border-top-color:#00bcd4;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin:auto;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+    <div class="loader"></div>
+    <h3 id="message">جاري فتح الموقع...</h3>
+</div>
+
+
+<script>
+
+// روابط المواقع
+
+const sites = {
+
+croco:
+"https://sites.google.com/view/croco-eng/home",
+
+franks:
+"http://www.frankshospitalworkshop.com/",
+
+ebme:
+"http://www.ebme.co.uk/",
+
+fda:
+"https://www.fda.gov/MedicalDevices/",
+
+edx:
+"https://www.edx.org/learn/health-safety/delft-university-of-technology-safe-use-of-medical-devices-in-clinical-practice",
+
+who:
+"https://www.who.int/teams/health-product-policy-and-standards/assistive-and-medical-technology/assistive-technology/learning-on-tap",
+
+bme:
+"https://www.bmeforglobalhealth.com/",
+
+libguide:
+"https://nu.kz.libguides.com/biomedical_eng/other"
+
+};
+
+
+// تحديد لغة الجهاز
+
+const lang = navigator.language || navigator.userLanguage;
+
+const isArabic = lang.startsWith("ar");
+
+
+// تغيير اللغة
+
+const message = document.getElementById("message");
+
+if(isArabic){
+
+    document.documentElement.lang = "ar";
+    document.documentElement.dir = "rtl";
+    message.innerHTML = "جاري فتح الموقع...";
+
+}else{
+
+    document.documentElement.lang = "en";
+    document.documentElement.dir = "ltr";
+    message.innerHTML = "Opening website...";
+
+}
+
+
+// قراءة الرابط
+
+const params = new URLSearchParams(window.location.search);
+
+const site = params.get("site");
+
+
+// التوجيه
+
+if(sites[site]){
+
+    setTimeout(()=>{
+
+        window.location.href = sites[site];
+
+    },500);
+
+
+}else{
+
+    message.innerHTML = isArabic 
+    ? "الرابط غير موجود"
+    : "Link not found";
+
+}
+
+
+</script>
+
+</body>
+</html>
