@@ -1,1305 +1,725 @@
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MedAtlas | المنصة التعليمية للأجهزة الطبية</title>
-
     <!-- SEO -->
-    <meta name="description" content="MedAtlas هي المنصة التعليمية الشاملة للأجهزة الطبية، تقدم معلومات دقيقة ومفصلة لطلاب الهندسة الطبية والفنيين." />
-    <meta name="keywords" content="أجهزة طبية, هندسة طبية, MedAtlas, مرجع طبي, صيانة أجهزة طبية, NICU, تعليم طبي" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://meatlas1.vercel.app" />
-    <link rel="icon" type="image/png" href="image/favicon.png" />
+<meta name="description" content="MedAtlas هي المنصة التعليمية الشاملة للأجهزة الطبية، تقدم معلومات دقيقة ومفصلة لطلاب الهندسة الطبية والفنيين. أكثر من 80 جهازاً طبياً في 11 قسماً." />
+<meta name="keywords" content="أجهزة طبية, هندسة طبية, MedAtlas, مرجع طبي, صيانة أجهزة طبية, NICU, تعليم طبي, أجهزة طبية pdf" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://meatlas1.vercel.app" />
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+<link rel="icon" type="image/png" href="image/favicon.png" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="MedAtlas | المنصة التعليمية للأجهزة الطبية" />
-    <meta property="og:description" content="المنصة التعليمية الشاملة للأجهزة الطبية، معلومات دقيقة لطلاب الهندسة الطبية والفنيين." />
-    <meta property="og:image" content="https://medatlas.com/og-image.jpg" />
-    <meta property="og:url" content="https://medatlas.com/" />
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="MedAtlas | المنصة التعليمية للأجهزة الطبية" />
+<meta property="og:description" content="المنصة التعليمية الشاملة للأجهزة الطبية، معلومات دقيقة لطلاب الهندسة الطبية والفنيين. أكثر من 80 جهازاً طبياً." />
+<meta property="og:image" content="https://medatlas.com/og-image.jpg" />
+<meta property="og:url" content="https://medatlas.com/" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="MedAtlas | المنصة التعليمية للأجهزة الطبية" />
-    <meta name="twitter:description" content="المنصة التعليمية الشاملة للأجهزة الطبية، معلومات دقيقة لطلاب الهندسة الطبية والفنيين." />
-    <meta name="twitter:image" content="https://medatlas.com/twitter-image.jpg" />
-    <meta name="google-site-verification" content="Td5ZPGMO_q2FPKNFOUCMcF6vLhvjAprNPabfMaZXpXQ" />
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="MedAtlas | المنصة التعليمية للأجهزة الطبية" />
+<meta name="twitter:description" content="المنصة التعليمية الشاملة للأجهزة الطبية، معلومات دقيقة لطلاب الهندسة الطبية والفنيين." />
+<meta name="twitter:image" content="https://medatlas.com/twitter-image.jpg" />
+<meta name="google-site-verification" content="Td5ZPGMO_q2FPKNFOUCMcF6vLhvjAprNPabfMaZXpXQ" />
 
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
+<!-- JSON-LD -->
+<script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "EducationalOrganization",
         "name": "MedAtlas",
         "description": "المنصة التعليمية الشاملة للأجهزة الطبية",
         "url": "https://medatlas.com",
-        "sameAs": ["https://play.google.com/store/apps/details?id=com.my.ElectroPro2024"],
+        "sameAs": [
+            "https://play.google.com/store/apps/details?id=com.my.ElectroPro2024",
+            "https://medatlas-ios.vercel.app"
+        ],
         "telephone": "+966-123-4567"
     }
-    </script>
+</script>
 
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
+<!-- Google Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
 
-    <style>
-        /* ============ المتغيرات ============ */
-        :root {
-            -webkit-tap-highlight-color: transparent;
-            --TextColor: #000000;
-            --primary: #3478F6;
-            --primary-light: #5B8DEF;
-            --primary-glow: rgba(52, 120, 246, 0.35);
-            --secondary: #E53935;
-            --background: #F4F7FC;
-            --background-top: #F0F5FF;
-            --background-bottom: #FFFFFF;
-            --card: #FFFFFF;
-            --card-glass: rgba(255, 255, 255, 0.85);
-            --text: #1A1C1E;
-            --text-body: #4B5563;
-            --text-light: #8E939B;
-            --border: #E3E8F0;
-            --shadow: 0 10px 30px rgba(120, 146, 192, 0.08);
-            --shadow-nav: 0 12px 30px rgba(30, 58, 138, 0.18);
-            --radius: 24px;
-            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            --blur: 25px;
-        }
+<style>
+    /* --- المتغيرات والتصميم الأساسي --- */
+    :root {
+        -webkit-tap-highlight-color: transparent;
+        --TextColor: #000000;
+        --primary: #4A6CF7;
+        --primary-light: #6B8AFF;
+        --primary-glow: rgba(107, 138, 255, 0.5);
+        --secondary: #FF6B6B;
+        --background: #f5f7ff;
+        --background2: #889FF9;
+        --card: #FFFFFF;
+        --text: #2D3748;
+        --text-light: #718096;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        --radius: 16px;
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        --blur: 8px;
+        --glass-opacity: 0.85;
+        --glass-border: 1px solid rgba(255, 255, 255, 0.3);
+        --glass-background: rgba(255, 255, 255, var(--glass-opacity));
+    }
 
-        .dark-mode {
-            --TextColor: #ffffff;
-            --primary: #5B8DEF;
-            --primary-light: #7BA3FF;
-            --primary-glow: rgba(91, 141, 239, 0.4);
-            --secondary: #FF6B6B;
-            --background: #0F1319;
-            --background-top: #131A24;
-            --background-bottom: #0B0E13;
-            --card: #1E2430;
-            --card-glass: rgba(255, 255, 255, 0.06);
-            --text: #F1F4F8;
-            --text-body: #C5CCD8;
-            --text-light: #9BA3B0;
-            --border: #2C3444;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.30);
-            --shadow-nav: 0 12px 30px rgba(0, 0, 0, 0.55);
-        }
+    .dark-mode {
+        --TextColor: #ffffff;
+        --primary: #6B8AFF;
+        --primary-light: #8BA4FF;
+        --primary-glow: rgba(107, 138, 255, 0.5);
+        --secondary: #FF8B8B;
+        --background: #0f172a;
+        --background2: #1a223f;
+        --card: #1e293b;
+        --text: #f8fafc;
+        --text-light: #cbd5e1;
+        --shadow: 0 10px 30px rgba(107, 138, 255, 0.15);
+        --blur: 0px;
+        --glass-opacity: 0.9;
+        --glass-border: 1px solid rgba(107, 138, 255, 0.1);
+        --glass-background: rgba(30, 41, 59, var(--glass-opacity));
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: var(--transition);
+    }
 
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background: linear-gradient(180deg, var(--background-top) 0%, var(--background-bottom) 100%);
-            background-attachment: fixed;
-            color: var(--text);
-            line-height: 1.7;
-            overflow-x: hidden;
-            min-height: 100vh;
-            padding-bottom: 120px;
-        }
+    body {
+        font-family: 'Tajawal', sans-serif;
+        background-color: var(--background);
+        color: var(--text);
+        line-height: 1.7;
+        overflow-x: hidden;
+        background-size: cover;
+        background-attachment: fixed;
+        min-height: 100vh;
+    }
 
-        /* ============ الهيدر ============ */
-        .header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 14px 24px;
-            background: var(--card-glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-        }
+    /* --- شريط التنقل العلوي --- */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 24px;
+        background: var(--glass-background);
+        backdrop-filter: blur(var(--blur));
+        -webkit-backdrop-filter: blur(var(--blur));
+        border-bottom: var(--glass-border);
+        z-index: 1000;
+        box-shadow: var(--shadow);
+    }
 
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1400px;
-            margin: 0 auto;
-            gap: 12px;
-        }
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--primary);
+        text-decoration: none;
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--primary);
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
+    .navbar-brand i {
+        font-size: 26px;
+    }
 
-        .logo i {
-            font-size: 24px;
-        }
+    .navbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
 
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .icon-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: none;
+        background: var(--glass-background);
+        backdrop-filter: blur(var(--blur));
+        color: var(--primary);
+        font-size: 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: var(--glass-border);
+        position: relative;
+    }
 
-        .icon-btn {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: 1.5px solid var(--border);
-            background: var(--card-glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 16px;
-            position: relative;
-        }
+    .icon-btn:hover {
+        background: var(--primary);
+        color: #fff;
+        transform: scale(1.05);
+    }
 
-        .icon-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px var(--primary-glow);
-            border-color: var(--primary);
-        }
+    .icon-btn .badge {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        background: var(--secondary);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--card);
+    }
 
-        .icon-btn.active {
-            background: var(--primary);
-            color: #fff;
-            border-color: var(--primary);
-        }
+    /* --- المحتوى الرئيسي --- */
+    .main-content {
+        padding-top: 90px;
+        padding-bottom: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
-        .icon-btn.active.fav-btn {
-            background: var(--secondary);
-            border-color: var(--secondary);
-        }
+    /* --- العنوان الرئيسي --- */
+    .hero-section {
+        text-align: center;
+        padding: 30px 0 20px;
+    }
 
-        .badge {
-            position: absolute;
-            top: -2px;
-            right: -2px;
-            min-width: 18px;
-            height: 18px;
-            padding: 0 4px;
-            border-radius: 10px;
-            background: var(--secondary);
-            color: #fff;
-            font-size: 10px;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid var(--card);
-        }
+    .hero-section h1 {
+        font-size: 32px;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 8px;
+    }
 
-        /* ============ الحاوية ============ */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px 24px;
-        }
+    .hero-section p {
+        font-size: 15px;
+        color: var(--text-light);
+        max-width: 600px;
+        margin: 0 auto;
+    }
 
-        /* ============ البحث ============ */
-        .search-wrapper {
-            margin-bottom: 18px;
-            position: relative;
-            display: none;
-        }
+    .stats-row {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
 
-        .search-wrapper.visible {
-            display: block;
-            animation: slideDown 0.3s ease-out;
-        }
+    .stat-badge {
+        background: var(--card);
+        border-radius: 14px;
+        padding: 12px 22px;
+        box-shadow: var(--shadow);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid rgba(74, 108, 247, 0.1);
+    }
 
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    .stat-badge i {
+        color: var(--primary);
+        font-size: 22px;
+    }
 
-        .search-box {
-            display: flex;
-            align-items: center;
-            background: var(--card-glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1.5px solid var(--border);
-            border-radius: 20px;
-            padding: 0 16px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
+    .stat-badge .num {
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--primary);
+    }
 
-        .search-box:focus-within {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px var(--primary-glow);
-        }
+    .stat-badge .lbl {
+        font-size: 12px;
+        color: var(--text-light);
+    }
 
-        .search-box i {
-            color: var(--primary);
-            font-size: 18px;
-            margin-left: 10px;
-        }
+    /* --- شريط البحث --- */
+    .search-wrapper {
+        position: sticky;
+        top: 78px;
+        z-index: 900;
+        padding: 12px 0;
+        background: var(--background);
+    }
 
-        .search-box input {
-            flex: 1;
-            border: none;
-            background: transparent;
-            padding: 14px 0;
-            font-family: inherit;
-            font-size: 14px;
-            color: var(--text);
-            outline: none;
-            font-weight: 500;
-        }
+    .search-box {
+        display: flex;
+        align-items: center;
+        background: var(--glass-background);
+        backdrop-filter: blur(var(--blur));
+        border-radius: 18px;
+        padding: 0 18px;
+        border: var(--glass-border);
+        box-shadow: var(--shadow);
+    }
 
-        .search-box input::placeholder {
-            color: var(--text-light);
-        }
+    .search-box i {
+        color: var(--primary);
+        font-size: 20px;
+        margin-left: 12px;
+    }
 
-        .clear-btn {
-            background: none;
-            border: none;
-            color: var(--text-light);
-            cursor: pointer;
-            padding: 6px;
-            font-size: 16px;
-            display: none;
-            transition: var(--transition);
-        }
+    .search-box input {
+        flex: 1;
+        border: none;
+        background: transparent;
+        padding: 16px 0;
+        font-family: 'Tajawal', sans-serif;
+        font-size: 15px;
+        color: var(--text);
+        outline: none;
+    }
 
-        .clear-btn:hover {
-            color: var(--secondary);
-        }
+    .search-box input::placeholder {
+        color: var(--text-light);
+    }
 
-        .clear-btn.visible {
-            display: block;
-        }
+    .search-clear {
+        background: transparent;
+        border: none;
+        color: var(--text-light);
+        cursor: pointer;
+        font-size: 18px;
+        display: none;
+    }
 
-        /* ============ الفلاتر ============ */
-        .filters {
-            display: flex;
-            gap: 8px;
-            overflow-x: auto;
-            padding: 4px 2px 12px;
-            margin-bottom: 8px;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
+    /* --- الفلاتر --- */
+    .filters-row {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 14px 2px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
 
-        .filters::-webkit-scrollbar {
-            display: none;
-        }
+    .filters-row::-webkit-scrollbar {
+        display: none;
+    }
 
-        .filter-chip {
-            flex-shrink: 0;
-            padding: 10px 18px;
-            border-radius: 22px;
-            background: var(--card);
-            border: 1.2px solid var(--border);
-            color: var(--text-body);
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            white-space: nowrap;
-            font-family: inherit;
-        }
+    .filter-chip {
+        flex-shrink: 0;
+        padding: 9px 18px;
+        border-radius: 22px;
+        background: var(--card);
+        color: var(--text-light);
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        border: 1.2px solid rgba(74, 108, 247, 0.15);
+        white-space: nowrap;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+        font-family: 'Tajawal', sans-serif;
+    }
 
-        .filter-chip:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
+    .filter-chip.active {
+        background: var(--primary);
+        color: #fff;
+        border-color: var(--primary);
+        box-shadow: 0 5px 18px var(--primary-glow);
+    }
 
-        .filter-chip.active {
-            background: var(--primary);
-            color: #fff;
-            border-color: var(--primary);
-            box-shadow: 0 6px 16px var(--primary-glow);
-            font-weight: 700;
-        }
+    .filter-chip:hover {
+        border-color: var(--primary);
+    }
 
-        /* ============ الإحصائيات ============ */
-        .stats-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 4px;
-            margin-bottom: 16px;
-            font-size: 13px;
-            color: var(--text-light);
-            font-weight: 600;
-        }
+    /* --- شبكة الأقسام والأجهزة --- */
+    .departments-container {
+        margin-top: 10px;
+    }
 
-        .stats-bar span strong {
-            color: var(--primary);
-            font-weight: 800;
-        }
+    .department-section {
+        margin-bottom: 32px;
+    }
 
-        /* ============ عنوان القسم ============ */
-        .department {
-            margin-bottom: 28px;
-        }
+    .department-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px;
+        padding-right: 4px;
+    }
 
-        .department-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 14px;
-            padding: 0 4px;
-        }
+    .department-header .dep-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        background: rgba(74, 108, 247, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-size: 18px;
+    }
 
-        .department-icon {
-            width: 38px;
-            height: 38px;
-            border-radius: 12px;
-            background: var(--primary-glow);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 18px;
-        }
+    .department-header h2 {
+        font-size: 17px;
+        font-weight: 800;
+        color: var(--text);
+        flex: 1;
+    }
 
-        .department-title {
-            font-size: 18px;
-            font-weight: 800;
-            color: var(--text);
-            flex: 1;
-        }
+    .department-header .dep-count {
+        background: rgba(74, 108, 247, 0.1);
+        color: var(--primary);
+        padding: 4px 12px;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: 700;
+    }
 
-        .department-count {
-            padding: 4px 12px;
-            background: var(--primary-glow);
-            color: var(--primary);
-            border-radius: 10px;
-            font-size: 12px;
-            font-weight: 700;
-        }
+    .devices-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 14px;
+    }
 
-        /* ============ شبكة الأجهزة ============ */
+    .device-card {
+        background: var(--card);
+        border-radius: 20px;
+        padding: 18px 12px 14px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        cursor: pointer;
+        position: relative;
+        border: 1px solid rgba(74, 108, 247, 0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 150px;
+        overflow: hidden;
+    }
+
+    .device-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 35px rgba(74, 108, 247, 0.15);
+        border-color: var(--primary-light);
+    }
+
+    .device-card .device-icon {
+        font-size: 34px;
+        color: var(--primary);
+        margin-bottom: 8px;
+    }
+
+    .device-card .device-name {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 3px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+
+    .device-card .device-en {
+        font-size: 11px;
+        color: var(--text-light);
+        margin-bottom: 3px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+
+    .device-card .device-desc {
+        font-size: 10.5px;
+        color: var(--text-light);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+
+    .fav-btn {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(74, 108, 247, 0.06);
+        color: #9CA3AF;
+        cursor: pointer;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+    }
+
+    .fav-btn.active {
+        background: rgba(229, 57, 53, 0.12);
+        color: #E53935;
+    }
+
+    .fav-btn:hover {
+        transform: scale(1.1);
+    }
+
+    /* --- لا توجد نتائج --- */
+    .empty-state {
+        text-align: center;
+        padding: 60px 20px;
+        color: var(--text-light);
+    }
+
+    .empty-state i {
+        font-size: 64px;
+        opacity: 0.4;
+        margin-bottom: 16px;
+        display: block;
+    }
+
+    .empty-state h3 {
+        font-size: 18px;
+        margin-bottom: 6px;
+        color: var(--text);
+    }
+
+    .empty-state p {
+        font-size: 13px;
+    }
+
+    /* --- نافذة التفاصيل --- */
+    .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        z-index: 2000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .modal-overlay.show {
+        display: flex;
+    }
+
+    .modal-content {
+        background: var(--card);
+        border-radius: 24px;
+        max-width: 500px;
+        width: 100%;
+        max-height: 85vh;
+        overflow-y: auto;
+        padding: 28px 24px;
+        position: relative;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-close {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(74, 108, 247, 0.08);
+        color: var(--text-light);
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .modal-close:hover {
+        background: var(--secondary);
+        color: #fff;
+    }
+
+    .modal-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        color: #fff;
+        margin: 0 auto 16px;
+        box-shadow: 0 10px 30px var(--primary-glow);
+    }
+
+    .modal-content h2 {
+        text-align: center;
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--text);
+        margin-bottom: 4px;
+    }
+
+    .modal-content .en-name {
+        text-align: center;
+        font-size: 14px;
+        color: var(--text-light);
+        margin-bottom: 16px;
+    }
+
+    .modal-category {
+        display: inline-block;
+        background: rgba(74, 108, 247, 0.1);
+        color: var(--primary);
+        padding: 4px 14px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 700;
+        margin: 0 auto 18px;
+    }
+
+    .modal-info-row {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 18px;
+    }
+
+    .modal-section {
+        margin-top: 16px;
+    }
+
+    .modal-section h3 {
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .modal-section p {
+        font-size: 13px;
+        color: var(--text-light);
+        line-height: 1.8;
+    }
+
+    /* --- زر العودة للأعلى --- */
+    .back-to-top {
+        position: fixed;
+        bottom: 24px;
+        left: 24px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        box-shadow: 0 10px 30px var(--primary-glow);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 900;
+    }
+
+    .back-to-top.show {
+        display: flex;
+    }
+
+    .back-to-top:hover {
+        transform: translateY(-3px);
+    }
+
+    /* --- التذييل --- */
+    .footer {
+        text-align: center;
+        padding: 30px 20px;
+        color: var(--text-light);
+        font-size: 13px;
+        margin-top: 40px;
+    }
+
+    .footer a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    /* --- استجابة الجوال --- */
+    @media (max-width: 600px) {
+        .hero-section h1 { font-size: 24px; }
+        .hero-section p { font-size: 13px; }
         .devices-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 14px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
         }
-
         .device-card {
-            position: relative;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 20px 14px 16px;
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-            overflow: hidden;
+            min-height: 130px;
+            padding: 14px 8px 10px;
         }
+        .device-card .device-icon { font-size: 28px; }
+        .device-card .device-name { font-size: 12.5px; }
+        .device-card .device-en { font-size: 10px; }
+        .device-card .device-desc { font-size: 9.5px; }
+        .stat-badge { padding: 8px 14px; }
+        .stat-badge .num { font-size: 16px; }
+        .navbar { padding: 0 14px; height: 62px; }
+        .navbar-brand { font-size: 18px; }
+        .navbar-brand i { font-size: 22px; }
+        .main-content { padding-top: 78px; }
+        .search-wrapper { top: 70px; }
+    }
 
-        .device-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 14px 30px var(--primary-glow);
-            border-color: var(--primary);
-        }
+    /* --- وضع داكن --- */
+    .dark-mode .device-card {
+        border-color: rgba(107, 138, 255, 0.1);
+    }
 
-        .device-card .device-icon {
-            font-size: 34px;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
+    .dark-mode .filter-chip {
+        border-color: rgba(107, 138, 255, 0.15);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
 
-        .device-card .device-title {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 2px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
+    .dark-mode .stat-badge {
+        border-color: rgba(107, 138, 255, 0.15);
+    }
 
-        .device-card .device-secondary {
-            font-size: 11px;
-            color: var(--text-light);
-            margin-bottom: 6px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            font-weight: 500;
-        }
+    .dark-mode .department-header .dep-icon {
+        background: rgba(107, 138, 255, 0.2);
+    }
 
-        .device-card .device-desc {
-            font-size: 11px;
-            color: var(--text-light);
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
+    .dark-mode .department-header .dep-count {
+        background: rgba(107, 138, 255, 0.15);
+    }
 
-        .fav-toggle {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            border: none;
-            background: var(--card-glass);
-            color: var(--text-light);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            transition: var(--transition);
-            z-index: 2;
-        }
+    .dark-mode .search-box {
+        background: rgba(30, 41, 59, 0.9);
+    }
 
-        .fav-toggle:hover {
-            transform: scale(1.1);
-        }
+    .dark-mode .fav-btn {
+        background: rgba(255, 255, 255, 0.06);
+    }
 
-        .fav-toggle.active {
-            background: rgba(229, 57, 53, 0.12);
-            color: var(--secondary);
-        }
+    .dark-mode .fav-btn.active {
+        background: rgba(229, 57, 53, 0.2);
+    }
+</style>
 
-        /* ============ حالة فارغة ============ */
-        .empty-state {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--text-light);
-        }
-
-        .empty-state i {
-            font-size: 70px;
-            color: var(--text-light);
-            opacity: 0.5;
-            margin-bottom: 16px;
-        }
-
-        .empty-state h3 {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--text-body);
-            margin-bottom: 6px;
-        }
-
-        .empty-state p {
-            font-size: 13px;
-        }
-
-        /* ============ شريط التنقل السفلي ============ */
-        .bottom-nav {
-            position: fixed;
-            bottom: 20px;
-            left: 24px;
-            right: 24px;
-            max-width: 600px;
-            margin: 0 auto;
-            height: 74px;
-            background: var(--card-glass);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1.8px solid var(--border);
-            border-radius: 34px;
-            box-shadow: var(--shadow-nav);
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            padding: 0 6px;
-            z-index: 1000;
-        }
-
-        .nav-item {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 3px;
-            padding: 8px 0;
-            border-radius: 28px;
-            cursor: pointer;
-            transition: var(--transition);
-            background: none;
-            border: none;
-            font-family: inherit;
-            color: var(--text-light);
-        }
-
-        .nav-item:hover {
-            color: var(--primary);
-        }
-
-        .nav-item.active {
-            color: var(--primary);
-        }
-
-        .nav-item i {
-            font-size: 20px;
-            transition: var(--transition);
-        }
-
-        .nav-item.active i {
-            transform: scale(1.1);
-        }
-
-        .nav-item span {
-            font-size: 10px;
-            font-weight: 600;
-        }
-
-        .nav-item.active span {
-            font-weight: 800;
-        }
-
-        .nav-indicator {
-            width: 0;
-            height: 3px;
-            background: var(--primary);
-            border-radius: 10px;
-            transition: var(--transition);
-        }
-
-        .nav-item.active .nav-indicator {
-            width: 26px;
-        }
-
-        /* ============ المودال ============ */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.55);
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            padding: 20px;
-        }
-
-        .modal-overlay.visible {
-            display: flex;
-            animation: fadeIn 0.25s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal {
-            background: var(--card);
-            border-radius: 26px;
-            max-width: 600px;
-            width: 100%;
-            max-height: 85vh;
-            overflow-y: auto;
-            padding: 28px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-            animation: modalIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        @keyframes modalIn {
-            from { opacity: 0; transform: scale(0.92); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            border: none;
-            background: var(--background);
-            color: var(--text-light);
-            cursor: pointer;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .modal-close:hover {
-            background: var(--secondary);
-            color: #fff;
-            transform: rotate(90deg);
-        }
-
-        .modal-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            margin-bottom: 22px;
-            padding-left: 40px;
-        }
-
-        .modal-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 18px;
-            background: var(--primary-glow);
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            flex-shrink: 0;
-        }
-
-        .modal-title-block {
-            flex: 1;
-        }
-
-        .modal-title {
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--text);
-            margin-bottom: 4px;
-            line-height: 1.3;
-        }
-
-        .modal-subtitle {
-            font-size: 14px;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-
-        .modal-fav-btn {
-            margin-top: 8px;
-            padding: 8px 14px;
-            border-radius: 14px;
-            border: 1.5px solid var(--border);
-            background: transparent;
-            color: var(--text-light);
-            font-family: inherit;
-            font-size: 12px;
-            font-weight: 700;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: var(--transition);
-        }
-
-        .modal-fav-btn:hover {
-            border-color: var(--secondary);
-            color: var(--secondary);
-        }
-
-        .modal-fav-btn.active {
-            background: rgba(229, 57, 53, 0.12);
-            border-color: var(--secondary);
-            color: var(--secondary);
-        }
-
-        .modal-info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .info-item {
-            padding: 14px;
-            background: var(--background);
-            border-radius: 14px;
-            border: 1px solid var(--border);
-        }
-
-        .info-item .label {
-            font-size: 11px;
-            color: var(--text-light);
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .info-item .value {
-            font-size: 13px;
-            color: var(--text);
-            font-weight: 700;
-        }
-
-        .modal-description {
-            padding: 18px;
-            background: var(--primary-glow);
-            border-radius: 16px;
-            margin-bottom: 16px;
-        }
-
-        .modal-description .label {
-            font-size: 12px;
-            color: var(--primary);
-            font-weight: 800;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .modal-description .text {
-            font-size: 14px;
-            color: var(--text);
-            line-height: 1.8;
-        }
-
-        .modal-extra {
-            padding: 16px;
-            background: var(--background);
-            border-radius: 14px;
-            border: 1px solid var(--border);
-            text-align: center;
-            font-size: 13px;
-            color: var(--text-light);
-        }
-
-        .modal-extra i {
-            color: var(--primary);
-            margin-left: 6px;
-        }
-
-        .modal-extra a {
-            color: var(--primary);
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        /* ============ Toast ============ */
-        .toast {
-            position: fixed;
-            bottom: 110px;
-            left: 50%;
-            transform: translateX(-50%) translateY(20px);
-            background: var(--text);
-            color: var(--background);
-            padding: 12px 24px;
-            border-radius: 14px;
-            font-size: 13px;
-            font-weight: 600;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s ease;
-            z-index: 3000;
-            white-space: nowrap;
-        }
-
-        .toast.visible {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        /* ============ Responsive ============ */
-        @media (max-width: 640px) {
-            .container { padding: 16px 14px; }
-            .header { padding: 12px 16px; }
-            .devices-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-            .device-card { padding: 16px 10px 14px; }
-            .device-card .device-icon { font-size: 28px; }
-            .device-card .device-title { font-size: 12px; }
-            .device-card .device-secondary,
-            .device-card .device-desc { font-size: 10px; }
-            .bottom-nav { left: 14px; right: 14px; height: 68px; }
-            .nav-item span { font-size: 9px; }
-            .modal { padding: 22px 18px; }
-            .modal-title { font-size: 18px; }
-            .modal-info-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 380px) {
-            .logo { font-size: 18px; }
-            .logo i { font-size: 20px; }
-            .icon-btn { width: 40px; height: 40px; font-size: 14px; }
-        }
-
-        /* ============ Scrollbar ============ */
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb {
-            background: var(--border);
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
-    </style>
 </head>
 <body>
 
-<!-- ============ الهيدر ============ -->
-<header class="header">
-    <div class="header-content">
-        <a href="#" class="logo" onclick="resetView(event)">
-            <i class="fas fa-atlas"></i>
-            <span>MedAtlas</span>
-        </a>
-        <div class="header-actions">
-            <button class="icon-btn" id="langBtn" onclick="toggleLanguage()" title="تغيير اللغة">
-                <i class="fas fa-globe"></i>
-            </button>
-            <button class="icon-btn fav-btn" id="favBtn" onclick="toggleFavoritesFilter()" title="المفضلة">
-                <i class="far fa-heart"></i>
-                <span class="badge" id="favBadge" style="display:none">0</span>
-            </button>
-            <button class="icon-btn" id="themeBtn" onclick="toggleTheme()" title="الوضع الليلي">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>
-    </div>
-</header>
-
-<!-- ============ الحاوية الرئيسية ============ -->
-<div class="container">
-
-    <!-- البحث -->
-    <div class="search-wrapper" id="searchWrapper">
-        <div class="search-box">
-            <i class="fas fa-search"></i>
-            <input type="text" id="searchInput" placeholder="ابحث عن جهاز طبي..." oninput="handleSearch(this.value)" />
-            <button class="clear-btn" id="clearBtn" onclick="clearSearch()">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-    </div>
-
-    <!-- الفلاتر -->
-    <div class="filters" id="filters"></div>
-
-    <!-- شريط الإحصائيات -->
-    <div class="stats-bar">
-        <span id="statsText">إجمالي الأجهزة: <strong>82</strong></span>
-        <span id="statsFilter"></span>
-    </div>
-
-    <!-- محتوى الأجهزة -->
-    <div id="devicesContainer"></div>
-</div>
-
-<!-- ============ شريط التنقل ============ -->
-<nav class="bottom-nav">
-    <button class="nav-item active" data-tab="0" onclick="switchTab(0)">
-        <i class="fas fa-toolbox"></i>
-        <span data-ar="دليل المهندس" data-en="Guide">دليل المهندس</span>
-        <div class="nav-indicator"></div>
-    </button>
-    <button class="nav-item" data-tab="1" onclick="switchTab(1)">
-        <i class="fas fa-database"></i>
-        <span data-ar="المصادر" data-en="Sources">المصادر</span>
-        <div class="nav-indicator"></div>
-    </button>
-    <button class="nav-item" data-tab="2" onclick="switchTab(2)">
-        <i class="fas fa-search"></i>
-        <span data-ar="بحث" data-en="Search">بحث</span>
-        <div class="nav-indicator"></div>
-    </button>
-    <button class="nav-item" data-tab="3" onclick="switchTab(3)">
-        <i class="fas fa-users"></i>
-        <span data-ar="المنتدى" data-en="Forum">المنتدى</span>
-        <div class="nav-indicator"></div>
-    </button>
-    <button class="nav-item" data-tab="4" onclick="switchTab(4)">
-        <i class="fas fa-cog"></i>
-        <span data-ar="الإعدادات" data-en="Settings">الإعدادات</span>
-        <div class="nav-indicator"></div>
-    </button>
-</nav>
-
-<!-- ============ المودال ============ -->
-<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this) closeModal()">
-    <div class="modal" id="modalContent"></div>
-</div>
-
-<!-- ============ Toast ============ -->
-<div class="toast" id="toast"></div>
-
-<script>
-/* ============================================================
-   البيانات: جميع الأجهزة (82 جهاز) من departments في main.dart
-   ============================================================ */
-
-const DEPARTMENTS = [
-    {
-        key: 'emergency',
-        ar: 'قسم الطوارئ',
-        en: 'Emergency Department',
-        filterAr: 'طوارئ',
-        filterEn: 'Emergency',
-        icon: 'fa-hospital',
-        devices: [
-            { id: 1, ar: 'مزيل الرجفان', en: 'Defibrillator', descAr: 'صدمات كهربائية', descEn: 'Electric shocks', icon: 'fa-bolt' },
-            { id: 2, ar: 'جهاز مراقبة المريض', en: 'Patient Monitor', descAr: 'مراقبة العلامات الحيوية', descEn: 'Vital signs monitoring', icon: 'fa-heartbeat' },
-            { id: 3, ar: 'جهاز تخطيط القلب', en: 'ECG Machine', descAr: 'رسم القلب الكهربائي', descEn: 'Electrocardiogram', icon: 'fa-heart' },
-            { id: 4, ar: 'عربة الإنعاش القلبي', en: 'Crash Cart', descAr: 'طوارئ متكاملة', descEn: 'Emergency ready', icon: 'fa-briefcase-medical' },
-            { id: 5, ar: 'جهاز أشعة محمول', en: 'Portable X-ray', descAr: 'تصوير إشعاعي متنقل', descEn: 'Mobile imaging', icon: 'fa-x-ray' },
-            { id: 6, ar: 'مقياس الأكسجين النبضي', en: 'Pulse Oximeter', descAr: 'قياس تشبع الأكسجين', descEn: 'Oxygen saturation measurement', icon: 'fa-fingerprint' },
-            { id: 7, ar: 'جهاز قياس السكر', en: 'Glucometer', descAr: 'قياس سكر الدم', descEn: 'Blood glucose measurement', icon: 'fa-tint' },
-            { id: 8, ar: 'جهاز قياس ثاني أكسيد الكربون', en: 'Capnograph', descAr: 'قياس ثاني أكسيد الكربون الزفيري', descEn: 'End-tidal CO2 measurement', icon: 'fa-wind' },
-            { id: 9, ar: 'منظار الحنجرة', en: 'Laryngoscope', descAr: 'أداة التنبيب الرغامي', descEn: 'Intubation tool', icon: 'fa-lightbulb' },
-            { id: 10, ar: 'مزيل الرجفان الآلي', en: 'AED', descAr: 'صدمة كهربائية ذكية', descEn: 'Smart defibrillation', icon: 'fa-bolt' },
-            { id: 11, ar: 'جهاز تدفئة الدم والسوائل', en: 'Blood Warmer', descAr: 'تدفئة المحاليل الوريدية', descEn: 'Warming IV fluids', icon: 'fa-thermometer-half' },
-            { id: 12, ar: 'جهاز الشفط الجراحي', en: 'Suction Machine', descAr: 'سحب الإفرازات والدم', descEn: 'Fluid and blood aspiration', icon: 'fa-wind' }
-        ]
-    },
-    {
-        key: 'icu',
-        ar: 'العناية المركزة (ICU)',
-        en: 'Intensive Care Unit (ICU)',
-        filterAr: 'عناية',
-        filterEn: 'ICU',
-        icon: 'fa-user-md',
-        devices: [
-            { id: 13, ar: 'جهاز التنفس الصناعي', en: 'Ventilator', descAr: 'دعم وظيفة التنفس', descEn: 'Respiratory support', icon: 'fa-wind' },
-            { id: 14, ar: 'جهاز مراقبة متعدد المعايير', en: 'Multiparameter Monitor', descAr: 'مراقبة الضغط والنبض والحرارة', descEn: 'Pressure, pulse, temperature', icon: 'fa-chart-line' },
-            { id: 15, ar: 'مضخة التسريب الوريدي', en: 'Infusion Pump', descAr: 'إعطاء الأدوية والمحاليل', descEn: 'Medication and fluid delivery', icon: 'fa-syringe' },
-            { id: 16, ar: 'مضخة الحقن الدقيقة', en: 'Syringe Pump', descAr: 'دفعات دوائية دقيقة', descEn: 'Precise drug infusion', icon: 'fa-syringe' },
-            { id: 17, ar: 'جهاز غسيل الكلى', en: 'Dialysis Machine', descAr: 'تنقية الدم من الفضلات', descEn: 'Blood purification', icon: 'fa-tint' },
-            { id: 18, ar: 'جهاز تحليل غازات الدم', en: 'ABG Analyzer', descAr: 'قياس غازات الدم الشرياني', descEn: 'Arterial blood gas measurement', icon: 'fa-flask' },
-            { id: 19, ar: 'مضخة التغذية الأنبوبية', en: 'Feeding Pump', descAr: 'التغذية المعوية', descEn: 'Enteral feeding', icon: 'fa-utensils' },
-            { id: 20, ar: 'جهاز أمواج صوتية محمول', en: 'Portable Ultrasound', descAr: 'تصوير صوتي متنقل', descEn: 'Mobile ultrasound imaging', icon: 'fa-mobile-alt' }
-        ]
-    },
-    {
-        key: 'or',
-        ar: 'غرفة العمليات',
-        en: 'Operating Room',
-        filterAr: 'عمليات',
-        filterEn: 'OR',
-        icon: 'fa-syringe',
-        devices: [
-            { id: 21, ar: 'جهاز التخدير الغازي', en: 'Anesthesia Machine', descAr: 'تخدير المريض بالغازات', descEn: 'Gas anesthesia delivery', icon: 'fa-flask' },
-            { id: 22, ar: 'جهاز الكي الكهربائي الجراحي', en: 'Electrosurgical Unit', descAr: 'كي الأنسجة ووقف النزيف', descEn: 'Tissue cauterization & hemostasis', icon: 'fa-bolt' },
-            { id: 23, ar: 'الضوء الجراحي', en: 'Surgical Light', descAr: 'إضاءة عالية الكثافة', descEn: 'High-intensity illumination', icon: 'fa-lightbulb' },
-            { id: 24, ar: 'طاولة العمليات الجراحية', en: 'Operating Table', descAr: 'قابلة للتعديل والوضعيات', descEn: 'Adjustable surgical table', icon: 'fa-bed' },
-            { id: 25, ar: 'جهاز الذراع C', en: 'C-Arm', descAr: 'تصوير فلوري ثنائي البعد', descEn: '2D fluoroscopic imaging', icon: 'fa-bullseye' },
-            { id: 26, ar: 'الميكروسكوب الجراحي', en: 'Surgical Microscope', descAr: 'تكبير دقيق للأنسجة', descEn: 'Precise tissue magnification', icon: 'fa-search' },
-            { id: 27, ar: 'برج المناظير الجراحية', en: 'Endoscopy Tower', descAr: 'نظام التنظير الداخلي', descEn: 'Endoscopic system', icon: 'fa-video' },
-            { id: 28, ar: 'نظام الغازات الطبية في العمليات', en: 'Medical Gas System', descAr: 'تزويد بالأكسجين والنيتروز', descEn: 'Oxygen and nitrous oxide supply', icon: 'fa-wind' }
-        ]
-    },
-    {
-        key: 'respiratory',
-        ar: 'قسم التنفس',
-        en: 'Respiratory Department',
-        filterAr: 'تنفس',
-        filterEn: 'Respiratory',
-        icon: 'fa-wind',
-        devices: [
-            { id: 29, ar: 'جهاز الضغط الإيجابي المستمر CPAP', en: 'CPAP', descAr: 'علاج انقطاع التنفس أثناء النوم', descEn: 'Sleep apnea treatment', icon: 'fa-wind' },
-            { id: 30, ar: 'جهاز الضغط الثنائي BiPAP', en: 'BiPAP', descAr: 'ضغط هوائي ثنائي المستوى', descEn: 'Bilevel positive airway pressure', icon: 'fa-wind' },
-            { id: 31, ar: 'مقياس التنفس (سبيروميتر)', en: 'Spirometer', descAr: 'قياس السعات الرئوية', descEn: 'Lung capacity measurement', icon: 'fa-wind' },
-            { id: 32, ar: 'جهاز تركيز الأكسجين', en: 'Oxygen Concentrator', descAr: 'استخلاص الأكسجين من الهواء', descEn: 'Oxygen extraction from air', icon: 'fa-bolt' },
-            { id: 33, ar: 'جهاز البخاخ (المرذاذ)', en: 'Nebulizer', descAr: 'تحويل الدواء إلى رذاذ للاستنشاق', descEn: 'Converts medication into inhalable mist', icon: 'fa-wind' }
-        ]
-    },
-    {
-        key: 'cardiology',
-        ar: 'قسم القلب',
-        en: 'Cardiology Department',
-        filterAr: 'قلب',
-        filterEn: 'Cardiology',
-        icon: 'fa-heart',
-        devices: [
-            { id: 34, ar: 'جهاز اختبار الإجهاد القلبي', en: 'Stress Test', descAr: 'تقييم أداء القلب تحت الجهد', descEn: 'Cardiac performance under stress', icon: 'fa-heart' },
-            { id: 35, ar: 'جهاز مراقبة هولتر', en: 'Holter Monitor', descAr: 'مراقبة القلب لمدة 24 ساعة', descEn: '24-hour cardiac monitoring', icon: 'fa-heart' },
-            { id: 36, ar: 'جهاز تخطيط صدى القلب', en: 'Echocardiography', descAr: 'تصوير القلب بالموجات الصوتية', descEn: 'Ultrasound imaging of the heart', icon: 'fa-heart' },
-            { id: 37, ar: 'مختبر القسطرة القلبية', en: 'Cath Lab', descAr: 'تشخيص وعلاج أمراض القلب', descEn: 'Cardiac diagnostics & interventions', icon: 'fa-heart' }
-        ]
-    },
-    {
-        key: 'radiology',
-        ar: 'قسم الأشعة',
-        en: 'Radiology Department',
-        filterAr: 'أشعة',
-        filterEn: 'Radiology',
-        icon: 'fa-x-ray',
-        devices: [
-            { id: 38, ar: 'جهاز الأشعة السينية التشخيصي', en: 'X-Ray', descAr: 'التصوير الإشعاعي', descEn: 'Radiographic imaging', icon: 'fa-x-ray' },
-            { id: 39, ar: 'الماسح المقطعي المحوري CT', en: 'CT Scanner', descAr: 'تصوير مقطعي ثلاثي الأبعاد', descEn: '3D cross-sectional imaging', icon: 'fa-x-ray' },
-            { id: 40, ar: 'جهاز الرنين المغناطيسي MRI', en: 'MRI', descAr: 'تصوير بالرنين المغناطيسي النووي', descEn: 'Magnetic resonance imaging', icon: 'fa-x-ray' },
-            { id: 41, ar: 'جهاز تصوير الثدي الشعاعي', en: 'Mammography', descAr: 'أشعة الثدي للكشف المبكر', descEn: 'Breast imaging for early detection', icon: 'fa-x-ray' },
-            { id: 42, ar: 'جهاز التنظير التألقي (فلوروسكوبي)', en: 'Fluoroscopy', descAr: 'تصوير ديناميكي مباشر', descEn: 'Real-time dynamic imaging', icon: 'fa-x-ray' },
-            { id: 43, ar: 'جهاز التصوير بالموجات الصوتية', en: 'Ultrasound', descAr: 'تصوير بالصدى الصوتي', descEn: 'Ultrasound imaging', icon: 'fa-wave-square' },
-            { id: 44, ar: 'نظام أرشفة الصور PACS', en: 'PACS Workstation', descAr: 'أرشفة الصور ونقلها', descEn: 'Image archiving & communication', icon: 'fa-desktop' },
-            { id: 45, ar: 'نظام الأشعة الرقمية CR', en: 'CR System', descAr: 'كومبيوتر راي (تصوير رقمي)', descEn: 'Computed Radiography', icon: 'fa-camera' },
-            { id: 46, ar: 'نظام الأشعة الرقمية DR', en: 'DR System', descAr: 'دايجيتال راي (تصوير رقمي مباشر)', descEn: 'Digital Radiography', icon: 'fa-camera' }
-        ]
-    },
-    {
-        key: 'lab',
-        ar: 'المختبر الطبي',
-        en: 'Medical Laboratory',
-        filterAr: 'مختبر',
-        filterEn: 'Lab',
-        icon: 'fa-flask',
-        devices: [
-            { id: 47, ar: 'جهاز تحليل صورة الدم الكاملة CBC', en: 'CBC Analyzer', descAr: 'تحليل شامل لخلايا الدم', descEn: 'Complete blood count', icon: 'fa-flask' },
-            { id: 48, ar: 'جهاز قياس سرعة الترسيب ESR', en: 'ESR Analyzer', descAr: 'معدل ترسب كريات الدم الحمراء', descEn: 'Erythrocyte sedimentation rate', icon: 'fa-flask' },
-            { id: 49, ar: 'جهاز التحليل الكيميائي الحيوي', en: 'Chemistry Analyzer', descAr: 'كيمياء الدم ووظائف الأعضاء', descEn: 'Blood chemistry & organ function', icon: 'fa-flask' },
-            { id: 50, ar: 'جهاز تحليل الإلكتروليتات', en: 'Electrolyte Analyzer', descAr: 'قياس الأملاح والمعادن في الدم', descEn: 'Salts and minerals in blood', icon: 'fa-flask' },
-            { id: 51, ar: 'قارئ لوحات الإليزا ELISA', en: 'ELISA Reader', descAr: 'قراءة التفاعلات المناعية', descEn: 'Immunoassay reading', icon: 'fa-flask' },
-            { id: 52, ar: 'غسالة لوحات الإليزا', en: 'ELISA Washer', descAr: 'غسل لوحات التفاعلات المناعية', descEn: 'Washing immunoassay plates', icon: 'fa-flask' },
-            { id: 53, ar: 'حاضنة المختبر', en: 'Incubator', descAr: 'تحضين العينات والزراعات', descEn: 'Sample incubation', icon: 'fa-thermometer-half' },
-            { id: 54, ar: 'جهاز الأوتوكلاف (المعقم البخاري)', en: 'Autoclave', descAr: 'تعقيم الأدوات بالبخار المضغوط', descEn: 'Steam sterilization of instruments', icon: 'fa-fire' },
-            { id: 55, ar: 'خزانة السلامة البيولوجية', en: 'Biosafety Cabinet', descAr: 'حماية من التلوث البيولوجي', descEn: 'Biological contamination protection', icon: 'fa-shield-alt' },
-            { id: 56, ar: 'جهاز عد المستعمرات البكتيرية', en: 'Colony Counter', descAr: 'تعداد البكتيريا', descEn: 'Bacterial colony enumeration', icon: 'fa-th' },
-            { id: 57, ar: 'ثلاجة حفظ الدم', en: 'Blood Bank Refrigerator', descAr: 'حفظ وحدات الدم', descEn: 'Blood unit storage', icon: 'fa-tint' },
-            { id: 58, ar: 'فريزر حفظ البلازما', en: 'Plasma Freezer', descAr: 'تجميد البلازما والمنتجات', descEn: 'Plasma and product freezing', icon: 'fa-snowflake' },
-            { id: 59, ar: 'جهاز خلط الدم', en: 'Blood Mixer', descAr: 'خلط عينات الدم', descEn: 'Blood sample mixing', icon: 'fa-blender' },
-            { id: 60, ar: 'جهاز الطرد المركزي لفصل الدم', en: 'Blood Centrifuge', descAr: 'فصل مكونات الدم', descEn: 'Blood component separation', icon: 'fa-tint' },
-            { id: 61, ar: 'الميكروتوم الدوَّار', en: 'Rotary Microtome', descAr: 'تقطيع الأنسجة لعينات الباثولوجيا', descEn: 'Tissue sectioning for pathology', icon: 'fa-cut' }
-        ]
-    },
-    {
-        key: 'nicu',
-        ar: 'العناية المركزة لحديثي الولادة (NICU)',
-        en: 'Neonatal Intensive Care (NICU)',
-        filterAr: 'حديثي الولادة',
-        filterEn: 'NICU',
-        icon: 'fa-baby',
-        devices: [
-            { id: 62, ar: 'حاضنة الأطفال حديثي الولادة', en: 'Neonatal Incubator', descAr: 'توفير بيئة دافئة وآمنة للرضع', descEn: 'Warm and safe environment for infants', icon: 'fa-baby' },
-            { id: 63, ar: 'جهاز التدفئة الإشعاعية للرضع', en: 'Radiant Infant Warmer', descAr: 'تدفئة سريعة باستخدام الأشعة تحت الحمراء', descEn: 'Rapid warming with infrared heat', icon: 'fa-sun' },
-            { id: 64, ar: 'وحدة العلاج الضوئي لحديثي الولادة', en: 'Neonatal Phototherapy Unit', descAr: 'علاج اليرقان بالضوء الأزرق', descEn: 'Jaundice treatment with blue light', icon: 'fa-lightbulb' },
-            { id: 65, ar: 'حاضنة النقل المتنقلة', en: 'Transport Incubator', descAr: 'نقل آمن للرضع بين الأقسام', descEn: 'Safe transport for neonates', icon: 'fa-ambulance' },
-            { id: 66, ar: 'جهاز قياس البيليروبين عبر الجلد', en: 'Transcutaneous Bilirubinometer', descAr: 'قياس نسبة الصفار غير الجراحي', descEn: 'Non-invasive bilirubin measurement', icon: 'fa-sun' }
-        ]
-    },
-    {
-        key: 'cssd',
-        ar: 'التعقيم المركزي (CSSD)',
-        en: 'Central Sterilization (CSSD)',
-        filterAr: 'التعقيم',
-        filterEn: 'CSSD',
-        icon: 'fa-first-aid',
-        devices: [
-            { id: 67, ar: 'معقم بدرجة حرارة منخفضة', en: 'Low Temperature Sterilizer', descAr: 'تعقيم الأدوات الحساسة للحرارة', descEn: 'Sterilizing heat-sensitive instruments', icon: 'fa-thermometer-half' },
-            { id: 68, ar: 'جهاز التنظيف بالموجات فوق الصوتية', en: 'Ultrasonic Cleaner', descAr: 'إزالة الأوساخ بالاهتزازات فوق الصوتية', descEn: 'Ultrasonic cavitation cleaning', icon: 'fa-water' },
-            { id: 69, ar: 'جهاز الغسبل والتعقيم', en: 'Washer Disinfector', descAr: 'غسل وتطهير الأدوات الجراحية', descEn: 'Washing and disinfection of surgical instruments', icon: 'fa-tint' },
-            { id: 70, ar: 'نظام تتبع التعقيم', en: 'Sterilization Tracking System', descAr: 'متابعة دورة التعقيم والجودة', descEn: 'Sterilization cycle and quality tracking', icon: 'fa-clipboard-list' },
-            { id: 71, ar: 'جهاز الختم الحراري', en: 'Heat Sealer Machine', descAr: 'إغلاق أكياس الأدوات المعقمة', descEn: 'Sealing sterile instrument pouches', icon: 'fa-box' },
-            { id: 72, ar: 'خزانة التخزين المعقم', en: 'Sterile Storage Cabinet', descAr: 'تخزين معقم للأدوات الجراحية', descEn: 'Sterile storage for surgical instruments', icon: 'fa-archive' }
-        ]
-    },
-    {
-        key: 'ophthalmology',
-        ar: 'قسم العيون (Ophthalmology)',
-        en: 'Ophthalmology Department',
-        filterAr: 'العيون',
-        filterEn: 'Ophthalmology',
-        icon: 'fa-eye',
-        devices: [
-            { id: 73, ar: 'المصباح الشقي', en: 'Slit Lamp', descAr: 'فحص الجزء الأمامي للعين', descEn: 'Anterior segment examination', icon: 'fa-eye' },
-            { id: 74, ar: 'جهاز قياس ضغط العين', en: 'Tonometer', descAr: 'قياس ضغط العين الداخلي', descEn: 'Intraocular pressure measurement', icon: 'fa-compress-arrows-alt' },
-            { id: 75, ar: 'جهاز تصوير قاع العين', en: 'Fundus Camera', descAr: 'تصوير الشبكية والعصب البصري', descEn: 'Retinal and optic nerve imaging', icon: 'fa-camera' },
-            { id: 76, ar: 'جهاز التصوير المقطعي للعين', en: 'OCT', descAr: 'تصوير مقطعي لطبقات الشبكية', descEn: 'Cross-sectional retinal imaging', icon: 'fa-layer-group' },
-            { id: 77, ar: 'جهاز قياس انكسار العين', en: 'Auto Refractometer', descAr: 'قياس الأخطاء الانكسارية للعين', descEn: 'Refractive error measurement', icon: 'fa-search' }
-        ]
-    },
-    {
-        key: 'dentistry',
-        ar: 'قسم الأسنان (Dentistry)',
-        en: 'Dentistry Department',
-        filterAr: 'الأسنان',
-        filterEn: 'Dentistry',
-        icon: 'fa-tooth',
-        devices: [
-            { id: 78, ar: 'كرسي الأسنان', en: 'Dental Chair', descAr: 'وحدة علاجية متكاملة لمرضى الأسنان', descEn: 'Integrated treatment unit for patients', icon: 'fa-chair' },
-            { id: 79, ar: 'جهاز أشعة الأسنان الرقمي', en: 'Dental X-Ray', descAr: 'تصوير إشعاعي دقيق للأسنان والفكين', descEn: 'Precise digital imaging of teeth and jaw', icon: 'fa-x-ray' },
-            { id: 80, ar: 'جهاز إزالة الجير فوق الصوتي', en: 'Ultrasonic Scaler', descAr: 'إزالة الترسبات والجير بالموجات الصوتية', descEn: 'Removes plaque and tartar with ultrasonic waves', icon: 'fa-wave-square' },
-            { id: 81, ar: 'جهاز المعالجة الضوئي (الحشوات)', en: 'Curing Light', descAr: 'معالجة الحشوات الضوئية بتقنية LED', descEn: 'LED light for curing dental composites', icon: 'fa-lightbulb' },
-            { id: 82, ar: 'جهاز ضاغط الهواء لطب الأسنان', en: 'Compressor', descAr: 'تزويد الوحدات السنية بالهواء المضغوط', descEn: 'Supplies compressed air to dental units', icon: 'fa-cog' }
-        ]
-    }
-];
-
-/* ============================================================
-   الحالة العامة
-   ============================================================ */
-const state = {
-    lang: 'ar',
-    theme: 'light',
-    activeFilter: 'all',
-    searchQuery: '',
-    showFavoritesOnly: false,
-    favorites: new Set(),
-    currentTab: 0
-};
-
-const FILTERS = [
-    { key: 'all', ar: 'الكل', en: 'All' },
-    { key: 'emergency', ar: 'طوارئ', en: 'Emergency' },
-    { key: 'icu', ar: 'عناية', en: 'ICU' },
-    { key: 'or', ar: 'عمليات', en: 'OR' },
-    { key: 'respiratory', ar: 'تنفس', en: 'Respiratory' },
-    { key: 'cardiology', ar: 'قلب', en: 'Cardiology' },
-    { key: 'radiology', ar: 'أشعة', en: 'Radiology' },
-    { key: 'lab', ar: 'مختبر', en: 'Lab' },
-    { key: 'nicu', ar: 'حديثي الولادة', en: 'NICU' },
-    { key: 'cssd', ar: 'التعقيم', en: 'CSSD' },
-    { key: 'ophthalmology', ar: 'العيون', en: 'Ophthalmology' },
-    { key: 'dentistry', ar: 'الأسنان', en: 'Dentistry' }
-];
-
-const TEXTS = {
-    ar: {
-        searchPlaceholder: 'ابحث عن جهاز طبي...',
-        totalDevices: 'إجمالي الأجهزة',
-        noResults: 'لا توجد نتائج',
-        noResultsHint: 'جرّب تغيير كلمة البحث أو الفلتر',
-        noFavorites: 'لا توجد أجهزة في المفضلة',
-        noFavoritesHint: 'أضف أجهزة للمفضلة بالضغط على القلب',
-        addedFav: 'أُضيف إلى المفضلة',
-        removedFav: 'أُزيل من المفضلة',
-        detailsNotAdded: 'تفاصيل هذا الجهاز لم تُضف بعد.',
-        comingSoon: 'قريباً - Soon',
-        forumTitle: 'المنتدى',
-        forumDesc: 'مساحة مخصصة للمهندسين الطبيين\nلتبادل الخبرات والنقاشات التقنية',
-        sourcesTitle: 'المصادر',
-        sourcesDesc: 'قريباً ستجد هنا مصادر تعليمية متكاملة',
-        settingsTitle: 'الإعدادات',
-        settingsDesc: 'قريباً ستتمكن من تخصيص تجربتك',
-        device: 'جهاز',
-        category: 'القسم',
-        description: 'الوصف',
-        deviceId: 'رقم الجهاز',
-        close: 'إغلاق',
-        addToFav: 'أضف للمفضلة',
-        removeFromFav: 'إزالة من المفضلة'
-    },
-    en: {
-        searchPlaceholder: 'Search for a medical device...',
-        totalDevices: 'Total Devices',
-        noResults: 'No Results',
-        noResultsHint: 'Try changing the search term or filter',
-        noFavorites: 'No Favorites Yet',
-        noFavoritesHint: 'Add devices to favorites by clicking the heart',
-        addedFav: 'Added to favorites',
-        removedFav: 'Removed from favorites',
-        detailsNotAdded: 'Details for this device have not been added yet.',
-        comingSoon: 'Coming Soon',
-        forumTitle: 'Forum',
-        forumDesc: 'A dedicated space for biomedical engineers\nto share expertise and technical discussions',
-        sourcesTitle: 'Sources',
-        sourcesDesc: 'Complete educational sources coming soon',
-        settingsTitle: 'Settings',
-        settingsDesc: 'Customize your experience coming soon',
-        device: 'Device',
-        category: 'Department',
-        description: 'Description',
-        deviceId: 'Device ID',
-        close: 'Close',
-        addToFav: 'Add to Favorites',
-        removeFromFav: 'Remove from Favorites'
-    }
-};
-
-function t(key) {
-    return TEXTS[state.lang][key] || key;
-}
-
-/* ============================================================
-   المفضلة (localStorage)
-   ============================================================ */
-function loadFavorites() {
-    try {
-        const saved = localStorage.getItem('medatlas_favorites');
-        if (saved) {
-            const arr = JSON.parse(saved);
-            if (Array.isArray(arr)) state.favorites = new Set(arr);
-        }
-    } catch (e) {}
-    updateFavBadge();
-}
-
-function saveFavorites() {
-    try {
-        localStorage.setItem('medatlas_favorites', JSON.stringify([...state.favorites]));
-    } catch (e) {}
-    updateFavBadge();
-}
-
-function updateFavBadge() {
-    const badge = document.getElementById('favBadge');
-    const count = state.favorites.size;
-    if (count > 0) {
-        badge.textContent = count > 99 ? '99+' : count;
-        badge.style.display = 'flex';
-    } else {
-        badge.style.display = 'none';
-    }
-}
-
-function toggleFavorite(id, event) {
-    if (event) event.stopPropagation();
-    if (state.favorites.has(id)) {
-        state.favorites.delete(id);
-        showToast(t('removedFav'));
-    } else {
-        state.favorites.add(id);
-        showToast(t('addedFav'));
-    }
-    saveFavorites();
-    render();
-}
-
-/* ============================================================
-   الثيم
-   ============================================================ */
-function toggleTheme() {
-    state.theme = state.theme === 'light' ? 'dark' : 'light';
-    document.body.classList.toggle('dark-mode', state.theme === 'dark');
-    document.getElementById('themeBtn').innerHTML = state.theme === 'dark'
-        ? '<i class="fas fa-sun"></i>'
-        : '<i class="fas fa-moon"></i>';
-    try { localStorage.setItem('medatlas_theme', state.theme); } catch(e) {}
-}
-
-function loadTheme() {
-    try {
-        const saved = localStorage.getItem('medatlas_theme');
-        if (saved) state.theme = saved;
-    } catch(e) {}
-    if (state.theme === 'dark') {
-        document.body.classList.add('dark-mode');
-        document.getElementById('themeBtn').innerHTML = '<i class="fas fa-sun"></i>';
-    }
-}
-
-/* ============================================================
-   اللغة
-   ============================================================ */
-function toggleLanguage() {
-    state.lang = state.lang === 'ar' ? 'en' : 'ar';
-    document.documentElement.lang = state.lang;
-    document.documentElement.dir = state.lang === 'ar' ? 'rtl' : 'ltr';
-    try { localStorage.setItem('medatlas_lang', state.lang); } catch(e) {}
-
-    // تحديث placeholder
-    document.getElementById('searchInput').placeholder = t('searchPlaceholder');
-
-    // تحديث نصوص التنقل
-    document.querySelectorAll('.nav-item span').forEach(el => {
-        el.textContent = el.dataset[state.lang];
-    });
-
-    renderFilters();
-    render();
-}
-
-function loadLanguage() {
-    try {
-        const s
+</body>
+</html>
