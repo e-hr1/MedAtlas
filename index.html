@@ -133,7 +133,7 @@
             border: var(--glass-border);
         }
 
-        /* ============ شريط التطبيق (التصميم الأصلي مع الشعار فقط) ============ */
+        /* ============ شريط التطبيق ============ */
         .app-bar {
             position: fixed;
             top: 0;
@@ -174,7 +174,6 @@
             box-shadow: 0 0 25px var(--primary-glow);
         }
 
-        /* الشعار فقط - بدون اسم أو أيقونة */
         .app-title {
             flex-grow: 1;
             display: flex;
@@ -305,18 +304,6 @@
 
         .dark-mode .hero {
             background: linear-gradient(160deg, #1a223f 0%, #0f172a 100%);
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 60%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(74, 108, 247, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
         }
 
         .hero-content {
@@ -494,7 +481,6 @@
             box-shadow: var(--shadow-card);
             border: 1px solid var(--border);
             transition: var(--transition);
-            cursor: default;
         }
 
         .feature-card:hover {
@@ -578,9 +564,6 @@
             color: var(--text);
             box-shadow: var(--shadow-card);
             transition: all 0.3s ease;
-            cursor: default;
-            position: relative;
-            overflow: hidden;
         }
 
         .dept-chip:hover {
@@ -673,18 +656,6 @@
             overflow: hidden;
         }
 
-        .platform-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(74, 108, 247, 0.1), transparent 70%);
-            pointer-events: none;
-        }
-
         .platform-card:hover {
             transform: translateY(-4px);
             border-color: var(--primary);
@@ -703,13 +674,8 @@
             background: linear-gradient(135deg, rgba(74, 108, 247, 0.15), rgba(107, 138, 255, 0.08));
         }
 
-        .platform-card.android-card .card-icon i {
-            color: #3ddc84;
-        }
-
-        .platform-card.ios-card .card-icon i {
-            color: var(--text);
-        }
+        .platform-card.android-card .card-icon i { color: #3ddc84; }
+        .platform-card.ios-card .card-icon i { color: var(--text); }
 
         .platform-card h3 {
             font-size: 1.35rem;
@@ -723,16 +689,6 @@
             line-height: 1.8;
             margin-bottom: 16px;
             font-size: 0.95rem;
-        }
-
-        .platform-card .store-btn {
-            min-width: auto;
-            padding: 10px 22px;
-            font-size: 0.9rem;
-        }
-
-        .platform-card .store-btn i {
-            font-size: 1.2rem;
         }
 
         /* ============ الأسئلة الشائعة ============ */
@@ -755,17 +711,8 @@
             gap: 12px;
         }
 
-        .faq-card h3 i {
-            color: var(--primary);
-        }
-
-        .faq-item {
-            border-bottom: 1px solid var(--border);
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-item:last-child { border-bottom: none; }
 
         .faq-question {
             display: flex;
@@ -780,16 +727,8 @@
             transition: color 0.3s ease;
         }
 
-        .faq-question:hover {
-            color: var(--primary);
-        }
-
-        .faq-question .toggle-icon {
-            color: var(--primary);
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-            flex-shrink: 0;
-        }
+        .faq-question:hover { color: var(--primary); }
+        .faq-question .toggle-icon { color: var(--primary); font-size: 1.2rem; transition: transform 0.3s ease; }
 
         .faq-answer {
             max-height: 0;
@@ -801,10 +740,7 @@
             font-size: 0.95rem;
         }
 
-        .faq-answer.open {
-            max-height: 300px;
-            padding: 0 0 16px 0;
-        }
+        .faq-answer.open { max-height: 300px; padding: 0 0 16px 0; }
 
         /* ============ زر التحميل السفلي ============ */
         .download-section {
@@ -814,21 +750,10 @@
             background: linear-gradient(135deg, rgba(74, 108, 247, 0.08), rgba(107, 138, 255, 0.04));
             border-radius: var(--radius);
             border: 1px solid var(--border);
-            scroll-margin-top: 100px;
         }
 
-        .download-section h3 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-            color: var(--text);
-        }
-
-        .download-section p {
-            color: var(--text-light);
-            margin-bottom: 24px;
-            font-size: 1rem;
-        }
+        .download-section h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+        .download-section p { color: var(--text-light); margin-bottom: 24px; font-size: 1rem; }
 
         /* ============ تذييل ============ */
         .footer {
@@ -855,64 +780,26 @@
             transition: color 0.3s ease;
         }
 
-        .footer-links a:hover {
-            color: var(--primary);
-        }
+        .footer-links a:hover { color: var(--primary); }
 
-        /* ============ استجابة ============ */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.1rem; }
-            .hero p { font-size: 1rem; }
-            .hero-actions { flex-direction: column; }
-            .badges { flex-direction: column; align-items: center; width: 100%; }
-            .badge { width: auto; }
-            .screenshot-gallery { grid-template-columns: repeat(2, 1fr); }
-            .container { padding: 30px 16px 40px; }
-            .app-title .logo-img { height: 40px; }
-            .dept-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
             .platforms-section { grid-template-columns: 1fr; }
-            .store-btn { min-width: 170px; font-size: 0.9rem; padding: 10px 20px; }
-            .store-btn i { font-size: 1.3rem; }
-            .store-btn-content strong { font-size: 0.9rem; }
-            .store-btn-content small { font-size: 0.6rem; }
-        }
-
-        @media (max-width: 480px) {
-            .hero { padding: 50px 16px 40px; }
-            .hero h1 { font-size: 1.7rem; }
-            .hero-icon img { width: 100px; height: 100px; }
-            .feature-grid { grid-template-columns: 1fr; }
-            .screenshot-gallery { grid-template-columns: 1fr 1fr; }
-            .dept-grid { grid-template-columns: 1fr 1fr; }
-            .section-title { font-size: 1.4rem; }
-            .section-title i { width: 38px; height: 38px; font-size: 1.2rem; }
-            .app-title .logo-img { height: 30px; }
         }
     </style>
 </head>
 <body>
-    <!-- شريط التطبيق (الشعار فقط) -->
+    <!-- شريط التطبيق -->
     <header class="app-bar glass-effect" id="appBar">
         <div class="app-title">
-            <img src="logo_MedAtlas.webp"
-                 alt="MedAtlas Logo"
-                 class="logo-img"
-                 onerror="this.onerror=null;this.src='logo_MedAtlas.webp';" />
+            <img src="logo_MedAtlas.webp" alt="MedAtlas Logo" class="logo-img" onerror="this.onerror=null;this.src='logo_MedAtlas.webp';" />
         </div>
         <div class="app-actions">
             <div class="spinner-menu">
-                <button class="spinner-btn">
-                    <i class="fas fa-language"></i>
-                </button>
+                <button class="spinner-btn"><i class="fas fa-language"></i></button>
                 <div class="spinner-content glass-effect">
-                    <div class="spinner-item" onclick="changeLanguage('ar')">
-                        <i class="fas fa-language"></i>
-                        <span>العربية</span>
-                    </div>
-                    <div class="spinner-item" onclick="changeLanguage('en')">
-                        <i class="fas fa-language"></i>
-                        <span>English</span>
-                    </div>
+                    <div class="spinner-item" onclick="changeLanguage('ar')"><i class="fas fa-language"></i><span>العربية</span></div>
+                    <div class="spinner-item" onclick="changeLanguage('en')"><i class="fas fa-language"></i><span>English</span></div>
                 </div>
             </div>
             <div class="dark-toggle" id="darkModeToggle">
@@ -925,13 +812,9 @@
     <!-- الهيدر -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-icon">
-                <img src="image/icon_app.png" alt="MedAtlas App Icon" />
-            </div>
+            <div class="hero-icon"><img src="image/icon_app.png" alt="MedAtlas App Icon" /></div>
             <h1 id="heroTitle">مرجع <span class="highlight">الأجهزة الطبية</span> الشامل</h1>
-            <p id="heroDesc">
-                MedAtlas هي المنصة التعليمية المتكاملة التي تقدم معلومات علمية دقيقة ومفصلة عن جميع الأجهزة الطبية المستخدمة في المستشفيات والمجال الطبي والهندسة الطبية الحيوية.
-            </p>
+            <p id="heroDesc">MedAtlas هي المنصة التعليمية المتكاملة التي تقدم معلومات علمية دقيقة ومفصلة عن جميع الأجهزة الطبية المستخدمة في المستشفيات والمجال الطبي والهندسة الطبية الحيوية.</p>
             <div class="hero-actions">
                 <div class="badges">
                     <span class="badge"><i class="fas fa-graduation-cap"></i> <span id="badge1">للطلاب والفنيين</span></span>
@@ -941,21 +824,13 @@
                 </div>
             </div>
             <div class="download-buttons">
-                <a href="https://play.google.com/store/apps/details?id=com.my.ElectroPro2024"
-                   class="store-btn android" target="_blank" rel="noopener">
+                <a href="https://play.google.com/store/apps/details?id=com.my.ElectroPro2024" class="store-btn android" target="_blank" rel="noopener">
                     <i class="fab fa-google-play"></i>
-                    <div class="store-btn-content">
-                        <small id="androidSmall">احصل عليه من</small>
-                        <strong>Google Play</strong>
-                    </div>
+                    <div class="store-btn-content"><small id="androidSmall">احصل عليه من</small><strong>Google Play</strong></div>
                 </a>
-                <a href="https://medatlas-ios.vercel.app/"
-                   class="store-btn ios" target="_blank" rel="noopener">
+                <a href="https://medatlas-ios.vercel.app/" class="store-btn ios" target="_blank" rel="noopener">
                     <i class="fab fa-apple"></i>
-                    <div class="store-btn-content">
-                        <small id="iosSmall">حمّل من</small>
-                        <strong>App Store</strong>
-                    </div>
+                    <div class="store-btn-content"><small id="iosSmall">حمّل من</small><strong>App Store</strong></div>
                 </a>
             </div>
         </div>
@@ -1018,32 +893,22 @@
         <h2 class="section-title"><i class="fas fa-download"></i> <span id="platformsTitle">حمّل التطبيق</span></h2>
         <p class="section-subtitle" id="platformsSubtitle">MedAtlas متاح الآن على Android و iOS مجاناً</p>
         <div class="platforms-section">
-            <!-- Android -->
             <div class="platform-card android-card">
                 <div class="card-icon"><i class="fab fa-android"></i></div>
                 <h3 id="androidCardTitle">Android</h3>
                 <p id="androidCardDesc">حمّل التطبيق من متجر Google Play. يعمل بدون إنترنت، ومتوافق مع جميع أجهزة Android الحديثة (Android 6.0+).</p>
-                <a href="https://play.google.com/store/apps/details?id=com.my.ElectroPro2024"
-                   class="store-btn android" target="_blank" rel="noopener">
+                <a href="https://play.google.com/store/apps/details?id=com.my.ElectroPro2024" class="store-btn android" target="_blank" rel="noopener">
                     <i class="fab fa-google-play"></i>
-                    <div class="store-btn-content">
-                        <small>Google Play</small>
-                        <strong>Download</strong>
-                    </div>
+                    <div class="store-btn-content"><small>Google Play</small><strong>Download</strong></div>
                 </a>
             </div>
-            <!-- iOS -->
             <div class="platform-card ios-card">
                 <div class="card-icon"><i class="fab fa-apple"></i></div>
                 <h3 id="iosCardTitle">iOS</h3>
                 <p id="iosCardDesc">أصبح MedAtlas متاحًا الآن على أجهزة iPhone وiPad عبر نسخة الويب.</p>
-                <a href="https://medatlas-ios.vercel.app/"
-                   class="store-btn ios" target="_blank" rel="noopener">
+                <a href="https://medatlas-ios.vercel.app/" class="store-btn ios" target="_blank" rel="noopener">
                     <i class="fab fa-apple"></i>
-                    <div class="store-btn-content">
-                        <small>Website</small>
-                        <strong>Download</strong>
-                    </div>
+                    <div class="store-btn-content"><small>Website</small><strong>Download</strong></div>
                 </a>
             </div>
         </div>
@@ -1051,45 +916,25 @@
         <!-- الأسئلة الشائعة -->
         <div class="faq-card">
             <h3><i class="fas fa-question-circle"></i> <span id="faqTitle">الأسئلة الشائعة</span></h3>
-
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span id="q1">ما هو MedAtlas؟</span>
-                    <i class="fas fa-plus-circle toggle-icon"></i>
-                </div>
+                <div class="faq-question" onclick="toggleFAQ(this)"><span id="q1">ما هو MedAtlas؟</span><i class="fas fa-plus-circle toggle-icon"></i></div>
                 <div class="faq-answer"><span id="a1">MedAtlas هي منصة تعليمية شاملة للأجهزة الطبية، تهدف إلى توفير معلومات دقيقة ومفصلة للطلاب والفنيين والمهندسين الطبيين.</span></div>
             </div>
-
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span id="q2">هل التطبيق مجاني؟</span>
-                    <i class="fas fa-plus-circle toggle-icon"></i>
-                </div>
+                <div class="faq-question" onclick="toggleFAQ(this)"><span id="q2">هل التطبيق مجاني؟</span><i class="fas fa-plus-circle toggle-icon"></i></div>
                 <div class="faq-answer"><span id="a2">نعم، تطبيق MedAtlas مجاني تماماً ولا يحتوي على أي رسوم أو اشتراكات.</span></div>
             </div>
-
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span id="q3">كم عدد الأجهزة المتوفرة؟</span>
-                    <i class="fas fa-plus-circle toggle-icon"></i>
-                </div>
+                <div class="faq-question" onclick="toggleFAQ(this)"><span id="q3">كم عدد الأجهزة المتوفرة؟</span><i class="fas fa-plus-circle toggle-icon"></i></div>
                 <div class="faq-answer"><span id="a3">يحتوي التطبيق حالياً على 82 جهازاً طبياً موزعة على 11 قسماً رئيسياً، ويتم إضافة أجهزة جديدة باستمرار.</span></div>
             </div>
-
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span id="q4">هل التطبيق متاح على iOS؟</span>
-                    <i class="fas fa-plus-circle toggle-icon"></i>
-                </div>
+                <div class="faq-question" onclick="toggleFAQ(this)"><span id="q4">هل التطبيق متاح على iOS؟</span><i class="fas fa-plus-circle toggle-icon"></i></div>
                 <div class="faq-answer"><span id="a4">نعم! الإصدار التجريبي متاح على iOS عبر TestFlight من خلال الرابط: medatlas-ios.vercel.app</span></div>
             </div>
-
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span id="q5">هل يحتاج التطبيق إلى اتصال بالإنترنت؟</span>
-                    <i class="fas fa-plus-circle toggle-icon"></i>
-                </div>
-                <div class="faq-answer"><span id="a5">جميع البيانات مدمجة داخل التطبيق، ويمكن استخدامه في أي وقت دون اتصال بالإنترنت.</span></div>
+                <div class="faq-question" onclick="toggleFAQ(this)"><span id="q5">هل يحتاج التطبيق إلى اتصال بالإنترنت؟</span><i class="fas fa-plus-circle toggle-icon"></i></div>
+                <div class="faq-answer"><span id="a5">جميع البيانات مدمجة داخل التطبيق، ويمكن استخدامها في أي وقت دون اتصال بالإنترنت.</span></div>
             </div>
         </div>
 
@@ -1098,37 +943,30 @@
             <h3 id="bottomDownloadTitle">جاهز للبدء؟</h3>
             <p id="bottomDownloadDesc">حمّل MedAtlas الآن على جهازك واستكشف عالم الأجهزة الطبية</p>
             <div class="download-buttons">
-                <a href="https://play.google.com/store/apps/details?id=com.my.ElectroPro2024"
-                   class="store-btn android" target="_blank" rel="noopener">
+                <a href="https://play.google.com/store/apps/details?id=com.my.ElectroPro2024" class="store-btn android" target="_blank" rel="noopener">
                     <i class="fab fa-google-play"></i>
-                    <div class="store-btn-content">
-                        <small>Google Play</small>
-                        <strong>Download</strong>
-                    </div>
+                    <div class="store-btn-content"><small>Google Play</small><strong>Download</strong></div>
                 </a>
-                <a href="https://medatlas-ios.vercel.app/"
-                   class="store-btn ios" target="_blank" rel="noopener">
+                <a href="https://medatlas-ios.vercel.app/" class="store-btn ios" target="_blank" rel="noopener">
                     <i class="fab fa-apple"></i>
-                    <div class="store-btn-content">
-                        <small>Website</small>
-                        <strong>Download</strong>
-                    </div>
+                    <div class="store-btn-content"><small>Website</small><strong>Download</strong></div>
                 </a>
             </div>
         </div>
     </main>
 
-    <!-- تذييل -->
+    <!-- تذييل (تمت إضافة روابط سياسة الخصوصية وشروط الاستخدام هنا) -->
     <footer class="footer">
         <div class="footer-links">
             <a href="https://play.google.com/store/apps/details?id=com.my.ElectroPro2024" target="_blank" rel="noopener">Google Play</a>
             <a href="https://medatlas-ios.vercel.app/" target="_blank" rel="noopener">iOS</a>
+            <a href="Privacy.html">سياسة الخصوصية</a>
+            <a href="statusterms.html">شروط الاستخدام</a>
         </div>
-        <p><i class="fas fa-copyright"></i> 2026 MedAtlas. جميع الحقوق محفوظة.</p>
+        <p><i class="fas faقم بـ: copyright"></i> 2026 MedAtlas. جميع الحقوق محفوظة.</p>
     </footer>
 
     <script>
-        // ============ FAQ Accordion ============
         function toggleFAQ(el) {
             const answer = el.nextElementSibling;
             const icon = el.querySelector('.toggle-icon');
@@ -1145,128 +983,76 @@
             }
         }
 
-        // ============ تحديث الصور حسب اللغة ============
         function updateScreenshots(lang) {
             const ids = ['screenshot1', 'screenshot2', 'screenshot3', 'screenshot4'];
             ids.forEach((id, i) => {
                 const el = document.getElementById(id);
                 if (lang === 'en') {
                     el.src = `image/screenshot_en${i + 1}.png`;
-                    el.alt = `Screenshot ${i + 1} from MedAtlas app`;
                 } else {
                     el.src = `image/screenshot${i + 1}.png`;
-                    el.alt = `لقطة شاشة ${i + 1} من تطبيق MedAtlas`;
                 }
             });
         }
 
-        // ============ الترجمات ============
         const translations = {
             ar: {
                 heroTitle: 'مرجع <span class="highlight">الأجهزة الطبية</span> الشامل',
                 heroDesc: 'MedAtlas هي المنصة التعليمية المتكاملة التي تقدم معلومات علمية دقيقة ومفصلة عن جميع الأجهزة الطبية المستخدمة في المستشفيات والمجال الطبي والهندسة الطبية الحيوية.',
-                badge1: 'للطلاب والفنيين',
-                badge2: '11 قسماً طبياً',
-                badge3: '82 جهازاً',
-                badge4: 'Android & iOS',
-                androidSmall: 'احصل عليه من',
-                iosSmall: 'احصل عليه من',
-                feature1Title: 'شرح تفصيلي لكل جهاز',
-                feature1Desc: 'الاسم، الوصف، مبدأ العمل، المكونات الداخلية، المواصفات الفنية، والأعطال الشائعة.',
-                feature2Title: 'تصنيف حسب الأقسام',
-                feature2Desc: 'الطوارئ، العناية المركزة، العمليات، التنفس، القلب، الأشعة، المختبر، NICU، التعقيم، العيون، والأسنان.',
-                feature3Title: 'الشركات والأنواع',
-                feature3Desc: 'معلومات عن الشركات المصنعة، الأنواع المختلفة، والأجهزة المشابهة والمكملة.',
-                feature4Title: 'مفضلة ومشاركة',
-                feature4Desc: 'احفظ أجهزتك المفضلة للوصول السريع، مع بحث فوري ثنائي اللغة ودعم الوضع الداكن.',
-                deptTitle: 'الأقسام الطبية',
-                deptSubtitle: 'تصفح الأجهزة حسب التخصص الطبي (11 قسماً رئيسياً و 82 جهازاً)',
-                galleryTitle: 'معرض التطبيق',
-                gallerySubtitle: 'لقطات شاشة من تطبيق MedAtlas تعرض واجهته ومحتواه',
-                platformsTitle: 'حمّل التطبيق',
-                platformsSubtitle: 'MedAtlas متاح الآن على Android و iOS مجاناً',
-                androidCardTitle: 'Android',
-                androidCardDesc: 'حمّل التطبيق من متجر Google Play. يعمل بدون إنترنت، ومتوافق مع جميع أجهزة Android الحديثة (Android 7.0+).',
-                iosCardTitle: 'iOS',
-                iosCardDesc: 'أصبح MedAtlas متاحًا الآن على أجهزة iPhone وiPad عبر نسخة الويب.',
+                badge1: 'للطلاب والفنيين', badge2: '11 قسماً طبياً', badge3: '82 جهازاً', badge4: 'Android & iOS',
+                androidSmall: 'احصل عليه من', iosSmall: 'احصل عليه من',
+                feature1Title: 'شرح تفصيلي لكل جهاز', feature1Desc: 'الاسم، الوصف، مبدأ العمل، المكونات الداخلية، المواصفات الفنية، والأعطال الشائعة.',
+                feature2Title: 'تصنيف حسب الأقسام', feature2Desc: 'الطوارئ، العناية المركزة، العمليات، التنفس، القلب، الأشعة، المختبر، NICU، التعقيم، العيون، والأسنان.',
+                feature3Title: 'الشركات والأنواع', feature3Desc: 'معلومات عن الشركات المصنعة، الأنواع المختلفة، والأجهزة المشابهة والمكملة.',
+                feature4Title: 'مفضلة ومشاركة', feature4Desc: 'احفظ أجهزتك المفضلة للوصول السريع، مع بحث فوري ثنائي اللغة ودعم الوضع الداكن.',
+                deptTitle: 'الأقسام الطبية', deptSubtitle: 'تصفح الأجهزة حسب التخصص الطبي (11 قسماً رئيسياً و 82 جهازاً)',
+                galleryTitle: 'معرض التطبيق', gallerySubtitle: 'لقطات شاشة من تطبيق MedAtlas تعرض واجهته ومحتواه',
+                platformsTitle: 'حمّل التطبيق', platformsSubtitle: 'MedAtlas متاح الآن على Android و iOS مجاناً',
+                androidCardTitle: 'Android', androidCardDesc: 'حمّل التطبيق من متجر Google Play. يعمل بدون إنترنت، ومتوافق مع جميع أجهزة Android الحديثة (Android 7.0+).',
+                iosCardTitle: 'iOS', iosCardDesc: 'أصبح MedAtlas متاحًا الآن على أجهزة iPhone وiPad عبر نسخة الويب.',
                 faqTitle: 'الأسئلة الشائعة',
-                q1: 'ما هو MedAtlas؟',
-                a1: 'MedAtlas هي منصة تعليمية شاملة للأجهزة الطبية، تهدف إلى توفير معلومات دقيقة ومفصلة للطلاب والفنيين والمهندسين الطبيين.',
-                q2: 'هل التطبيق مجاني؟',
-                a2: 'نعم، تطبيق MedAtlas مجاني تماماً ولا يحتوي على أي رسوم أو اشتراكات.',
-                q3: 'كم عدد الأجهزة المتوفرة؟',
-                a3: 'يحتوي التطبيق حالياً على 82 جهازاً طبياً موزعة على 11 قسماً رئيسياً، ويتم إضافة أجهزة جديدة باستمرار.',
-                q4: 'هل التطبيق متاح على iOS؟',
-                a4: 'نعم! الإصدار التجريبي متاح على iOS عبر TestFlight من خلال الرابط: medatlas-ios.vercel.app',
-                q5: 'هل يحتاج التطبيق إلى اتصال بالإنترنت؟',
-                a5: 'جميع البيانات مدمجة داخل التطبيق، ويمكن استخدامه في أي وقت دون اتصال بالإنترنت.',
-                bottomDownloadTitle: 'جاهز للبدء؟',
-                bottomDownloadDesc: 'حمّل MedAtlas الآن على جهازك واستكشف عالم الأجهزة الطبية',
+                q1: 'ما هو MedAtlas؟', a1: 'MedAtlas هي منصة تعليمية شاملة للأجهزة الطبية، تهدف إلى توفير معلومات دقيقة ومفصلة للطلاب والفنيين والمهندسين الطبيين.',
+                q2: 'هل التطبيق مجاني؟', a2: 'نعم، تطبيق MedAtlas مجاني تماماً ولا يحتوي على أي رسوم أو اشتراكات.',
+                q3: 'كم عدد الأجهزة المتوفرة؟', a3: 'يحتوي التطبيق حالياً على 82 جهازاً طبياً موزعة على 11 قسماً رئيسياً، ويتم إضافة أجهزة جديدة باستمرار.',
+                q4: 'هل التطبيق متاح على iOS؟', a4: 'نعم! الإصدار التجريبي متاح على iOS عبر TestFlight من خلال الرابط: medatlas-ios.vercel.app',
+                q5: 'هل يحتاج التطبيق إلى اتصال بالإنترنت؟', a5: 'جميع البيانات مدمجة داخل التطبيق، ويمكن استخدامها في أي وقت دون اتصال بالإنترنت.',
+                bottomDownloadTitle: 'جاهز للبدء؟', bottomDownloadDesc: 'حمّل MedAtlas الآن على جهازك واستكشف عالم الأجهزة الطبية',
                 depts: [
-                    { name: 'قسم الطوارئ', count: '12 جهازاً' },
-                    { name: 'العناية المركزة ICU', count: '8 أجهزة' },
-                    { name: 'غرفة العمليات', count: '8 أجهزة' },
-                    { name: 'قسم التنفس', count: '5 أجهزة' },
-                    { name: 'قسم القلب', count: '4 أجهزة' },
-                    { name: 'قسم الأشعة', count: '9 أجهزة' },
-                    { name: 'المختبر الطبي', count: '15 جهازاً' },
-                    { name: 'NICU', count: '5 أجهزة' },
-                    { name: 'التعقيم المركزي CSSD', count: '6 أجهزة' },
-                    { name: 'قسم العيون', count: '5 أجهزة' },
+                    { name: 'قسم الطوارئ', count: '12 جهازاً' }, { name: 'العناية المركزة ICU', count: '8 أجهزة' },
+                    { name: 'غرفة العمليات', count: '8 أجهزة' }, { name: 'قسم التنفس', count: '5 أجهزة' },
+                    { name: 'قسم القلب', count: '4 أجهزة' }, { name: 'قسم الأشعة', count: '9 أجهزة' },
+                    { name: 'المختبر الطبي', count: '15 جهازاً' }, { name: 'NICU', count: '5 أجهزة' },
+                    { name: 'التعقيم المركزي CSSD', count: '6 أجهزة' }, { name: 'قسم العيون', count: '5 أجهزة' },
                     { name: 'قسم الأسنان', count: '5 أجهزة' }
                 ]
             },
             en: {
                 heroTitle: 'The Comprehensive <span class="highlight">Medical Devices</span> Reference',
                 heroDesc: 'MedAtlas is an integrated educational platform providing accurate, detailed scientific information about all medical devices used in hospitals, healthcare, and biomedical engineering.',
-                badge1: 'For Students & Technicians',
-                badge2: '11 Departments',
-                badge3: '82 Devices',
-                badge4: 'Android & iOS',
-                androidSmall: 'Get it on',
-                iosSmall: 'Get it on',
-                feature1Title: 'Detailed Device Explanations',
-                feature1Desc: 'Name, description, working principle, internal components, technical specifications, and common faults.',
-                feature2Title: 'Classified by Departments',
-                feature2Desc: 'Emergency, ICU, Surgery, Respiratory, Cardiology, Radiology, Laboratory, NICU, CSSD, Ophthalmology, and Dentistry.',
-                feature3Title: 'Manufacturers & Types',
-                feature3Desc: 'Information about manufacturers, different types, and similar or complementary devices.',
-                feature4Title: 'Favorites & Search',
-                feature4Desc: 'Save your favorite devices for quick access, with instant bilingual search and dark mode support.',
-                deptTitle: 'Medical Departments',
-                deptSubtitle: 'Browse devices by medical specialty (11 main departments, 82 devices)',
-                galleryTitle: 'App Gallery',
-                gallerySubtitle: 'Screenshots from the MedAtlas app showcasing its interface and content',
-                platformsTitle: 'Download the App',
-                platformsSubtitle: 'MedAtlas is now available on Android and iOS for free',
-                androidCardTitle: 'Android',
-                androidCardDesc: 'Download from Google Play Store. Works offline and is compatible with all modern Android devices (Android 7.0+).',
-                iosCardTitle: 'iOS',
-                iosCardDesc: 'MedAtlas is now available on iPhone and iPad as a web-based application.',
+                badge1: 'For Students & Technicians', badge2: '11 Departments', badge3: '82 Devices', badge4: 'Android & iOS',
+                androidSmall: 'Get it on', iosSmall: 'Get it on',
+                feature1Title: 'Detailed Device Explanations', feature1Desc: 'Name, description, working principle, internal components, technical specifications, and common faults.',
+                feature2Title: 'Classified by Departments', feature2Desc: 'Emergency, ICU, Surgery, Respiratory, Cardiology, Radiology, Laboratory, NICU, CSSD, Ophthalmology, and Dentistry.',
+                feature3Title: 'Manufacturers & Types', feature3Desc: 'Information about manufacturers, different types, and similar or complementary devices.',
+                feature4Title: 'Favorites & Search', feature4Desc: 'Save your favorite devices for quick access, with instant bilingual search and dark mode support.',
+                deptTitle: 'Medical Departments', deptSubtitle: 'Browse devices by medical specialty (11 main departments, 82 devices)',
+                galleryTitle: 'App Gallery', gallerySubtitle: 'Screenshots from the MedAtlas app showcasing its interface and content',
+                platformsTitle: 'Download the App', platformsSubtitle: 'MedAtlas is now available on Android and iOS for free',
+                androidCardTitle: 'Android', androidCardDesc: 'Download from Google Play Store. Works offline and is compatible with all modern Android devices (Android 7.0+).',
+                iosCardTitle: 'iOS', iosCardDesc: 'MedAtlas is now available on iPhone and iPad as a web-based application.',
                 faqTitle: 'Frequently Asked Questions',
-                q1: 'What is MedAtlas?',
-                a1: 'MedAtlas is a comprehensive educational platform for medical devices, providing accurate and detailed information for students, technicians, and biomedical engineers.',
-                q2: 'Is the app free?',
-                a2: 'Yes, MedAtlas is completely free with no fees or subscriptions.',
-                q3: 'How many devices are available?',
-                a3: 'The app currently contains 82 medical devices across 11 main departments, with new devices added continuously.',
-                q4: 'Is the app available on iOS?',
-                a4: 'Yes! The beta version is available on iOS via TestFlight at: medatlas-ios.vercel.app',
-                q5: 'Does the app require an internet connection?',
-                a5: 'All data is built into the app and can be used anytime without an internet connection.',
-                bottomDownloadTitle: 'Ready to get started?',
-                bottomDownloadDesc: 'Download MedAtlas now and explore the world of medical devices',
+                q1: 'What is MedAtlas?', a1: 'MedAtlas is a comprehensive educational platform for medical devices, providing accurate and detailed information for students, technicians, and biomedical engineers.',
+                q2: 'Is the app free?', a2: 'Yes, MedAtlas is completely free with no fees or subscriptions.',
+                q3: 'How many devices are available?', a3: 'The app currently contains 82 medical devices across 11 main departments, with new devices added continuously.',
+                q4: 'Is the app available on iOS?', a4: 'Yes! The beta version is available on iOS via TestFlight at: medatlas-ios.vercel.app',
+                q5: 'Does the app require an internet connection?', a5: 'All data is built into the app and can be used anytime without an internet connection.',
+                bottomDownloadTitle: 'Ready to get started?', bottomDownloadDesc: 'Download MedAtlas now and explore the world of medical devices',
                 depts: [
-                    { name: 'Emergency Department', count: '12 devices' },
-                    { name: 'Intensive Care ICU', count: '8 devices' },
-                    { name: 'Operating Room', count: '8 devices' },
-                    { name: 'Respiratory', count: '5 devices' },
-                    { name: 'Cardiology', count: '4 devices' },
-                    { name: 'Radiology', count: '9 devices' },
-                    { name: 'Medical Laboratory', count: '15 devices' },
-                    { name: 'NICU', count: '5 devices' },
-                    { name: 'CSSD', count: '6 devices' },
-                    { name: 'Ophthalmology', count: '5 devices' },
+                    { name: 'Emergency Department', count: '12 devices' }, { name: 'Intensive Care ICU', count: '8 devices' },
+                    { name: 'Operating Room', count: '8 devices' }, { name: 'Respiratory', count: '5 devices' },
+                    { name: 'Cardiology', count: '4 devices' }, { name: 'Radiology', count: '9 devices' },
+                    { name: 'Medical Laboratory', count: '15 devices' }, { name: 'NICU', count: '5 devices' },
+                    { name: 'CSSD', count: '6 devices' }, { name: 'Ophthalmology', count: '5 devices' },
                     { name: 'Dentistry', count: '5 devices' }
                 ]
             }
@@ -1277,53 +1063,31 @@
         function applyLanguage(lang) {
             const t = translations[lang];
             if (!t) return;
-
             document.documentElement.lang = lang;
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-
             updateScreenshots(lang);
 
             const setText = (id, val) => { const el = document.getElementById(id); if (el) el.innerHTML = val; };
-            setText('heroTitle', t.heroTitle);
-            setText('heroDesc', t.heroDesc);
-            setText('badge1', t.badge1);
-            setText('badge2', t.badge2);
-            setText('badge3', t.badge3);
-            setText('badge4', t.badge4);
-            setText('androidSmall', t.androidSmall);
-            setText('iosSmall', t.iosSmall);
-            setText('feature1Title', t.feature1Title);
-            setText('feature1Desc', t.feature1Desc);
-            setText('feature2Title', t.feature2Title);
-            setText('feature2Desc', t.feature2Desc);
-            setText('feature3Title', t.feature3Title);
-            setText('feature3Desc', t.feature3Desc);
-            setText('feature4Title', t.feature4Title);
-            setText('feature4Desc', t.feature4Desc);
-            setText('deptTitle', t.deptTitle);
-            setText('deptSubtitle', t.deptSubtitle);
-            setText('galleryTitle', t.galleryTitle);
-            setText('gallerySubtitle', t.gallerySubtitle);
-            setText('platformsTitle', t.platformsTitle);
-            setText('platformsSubtitle', t.platformsSubtitle);
-            setText('androidCardTitle', t.androidCardTitle);
-            setText('androidCardDesc', t.androidCardDesc);
-            setText('iosCardTitle', t.iosCardTitle);
-            setText('iosCardDesc', t.iosCardDesc);
+            setText('heroTitle', t.heroTitle); setText('heroDesc', t.heroDesc);
+            setText('badge1', t.badge1); setText('badge2', t.badge2); setText('badge3', t.badge3); setText('badge4', t.badge4);
+            setText('androidSmall', t.androidSmall); setText('iosSmall', t.iosSmall);
+            setText('feature1Title', t.feature1Title); setText('feature1Desc', t.feature1Desc);
+            setText('feature2Title', t.feature2Title); setText('feature2Desc', t.feature2Desc);
+            setText('feature3Title', t.feature3Title); setText('feature3Desc', t.feature3Desc);
+            setText('feature4Title', t.feature4Title); setText('feature4Desc', t.feature4Desc);
+            setText('deptTitle', t.deptTitle); setText('deptSubtitle', t.deptSubtitle);
+            setText('galleryTitle', t.galleryTitle); setText('gallerySubtitle', t.gallerySubtitle);
+            setText('platformsTitle', t.platformsTitle); setText('platformsSubtitle', t.platformsSubtitle);
+            setText('androidCardTitle', t.androidCardTitle); setText('androidCardDesc', t.androidCardDesc);
+            setText('iosCardTitle', t.iosCardTitle); setText('iosCardDesc', t.iosCardDesc);
             setText('faqTitle', t.faqTitle);
-            setText('q1', t.q1); setText('a1', t.a1);
-            setText('q2', t.q2); setText('a2', t.a2);
-            setText('q3', t.q3); setText('a3', t.a3);
-            setText('q4', t.q4); setText('a4', t.a4);
+            setText('q1', t.q1); setText('a1', t.a1); setText('q2', t.q2); setText('a2', t.a2);
+            setText('q3', t.q3); setText('a3', t.a3); setText('q4', t.q4); setText('a4', t.a4);
             setText('q5', t.q5); setText('a5', t.a5);
-            setText('bottomDownloadTitle', t.bottomDownloadTitle);
-            setText('bottomDownloadDesc', t.bottomDownloadDesc);
+            setText('bottomDownloadTitle', t.bottomDownloadTitle); setText('bottomDownloadDesc', t.bottomDownloadDesc);
 
             const deptGrid = document.getElementById('deptGrid');
-            const icons = [
-                'fa-ambulance', 'fa-user-md', 'fa-syringe', 'fa-lungs', 'fa-heart',
-                'fa-x-ray', 'fa-flask', 'fa-baby', 'fa-shield-alt', 'fa-eye', 'fa-tooth'
-            ];
+            const icons = ['fa-ambulance', 'fa-user-md', 'fa-syringe', 'fa-lungs', 'fa-heart', 'fa-x-ray', 'fa-flask', 'fa-baby', 'fa-shield-alt', 'fa-eye', 'fa-tooth'];
             deptGrid.innerHTML = t.depts.map((d, i) =>
                 `<div class="dept-chip"><i class="fas ${icons[i]}"></i><div class="dept-chip-info"><span>${d.name}</span><small>${d.count}</small></div></div>`
             ).join('');
@@ -1333,10 +1097,8 @@
         }
 
         function changeLanguage(lang) { applyLanguage(lang); }
-
         applyLanguage(currentLang);
 
-        // ============ Dark Mode ============
         const darkToggle = document.getElementById('darkModeToggle');
         const lightIcon = document.getElementById('lightIcon');
         const darkIcon = document.getElementById('darkIcon');
@@ -1354,19 +1116,12 @@
                 localStorage.setItem('darkMode', 'disabled');
             }
         }
+        setDark(localStorage.getItem('darkMode') !== 'disabled');
+        darkToggle.addEventListener('click', () => setDark(!document.body.classList.contains('dark-mode')));
 
-        const savedDark = localStorage.getItem('darkMode');
-        setDark(savedDark !== 'disabled');
-
-        darkToggle.addEventListener('click', () => {
-            setDark(!document.body.classList.contains('dark-mode'));
-        });
-
-        // ============ App Bar Scroll ============
-        const appBar = document.getElementById('appBar');
         window.addEventListener('scroll', () => {
-            appBar.classList.toggle('scrolled', window.scrollY > 20);
+            document.getElementById('appBar').classList.toggle('scrolled', window.scrollY > 20);
         }, { passive: true });
     </script>
 </body>
-                    </html>
+</html>
