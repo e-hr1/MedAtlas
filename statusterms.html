@@ -6,7 +6,7 @@
     <title>شروط الاستخدام - MedAtlas</title>
 
     <!-- SEO -->
-    <meta name="description" content="شروط الاستخدام لتطبيق MedAtlas - المنصة التعليمية للأجهزة الطبية." />
+    <meta name="description" content="شروط الاستخدام لتطبيق MedAtlas - الموسوعة التعليمية للأجهزة الطبية والهندسة الطبية الحيوية." />
     <meta name="robots" content="index, follow" />
     <link rel="icon" type="image/png" href="image/favicon.png" />
 
@@ -269,7 +269,7 @@
             padding: 110px 24px 60px;
         }
 
-        .privacy-card {
+        .terms-card {
             background: var(--card);
             border-radius: var(--radius);
             padding: 40px 35px;
@@ -278,7 +278,7 @@
             animation: slideUp 0.6s ease-out forwards;
         }
 
-        .privacy-header {
+        .terms-header {
             display: flex;
             align-items: center;
             gap: 16px;
@@ -287,7 +287,7 @@
             padding-bottom: 20px;
         }
 
-        .privacy-header .icon {
+        .terms-header .icon {
             width: 56px;
             height: 56px;
             border-radius: 50%;
@@ -300,23 +300,23 @@
             flex-shrink: 0;
         }
 
-        .privacy-header h1 {
+        .terms-header h1 {
             font-size: 2rem;
             font-weight: 800;
             color: var(--primary);
         }
 
-        .privacy-header .update-date {
+        .terms-header .update-date {
             font-size: 0.9rem;
             color: var(--text-light);
             margin-top: 4px;
         }
 
-        .privacy-section {
+        .terms-section {
             margin-bottom: 28px;
         }
 
-        .privacy-section h2 {
+        .terms-section h2 {
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary);
@@ -326,30 +326,30 @@
             gap: 10px;
         }
 
-        .privacy-section h2 i {
+        .terms-section h2 i {
             font-size: 1.1rem;
             opacity: 0.8;
         }
 
-        .privacy-section p,
-        .privacy-section li {
+        .terms-section p,
+        .terms-section li {
             color: var(--text-body);
             font-size: 1.05rem;
             line-height: 1.9;
         }
 
-        .privacy-section ul {
+        .terms-section ul {
             list-style: none;
             padding: 0;
             margin-top: 8px;
         }
 
-        .privacy-section ul li {
+        .terms-section ul li {
             padding: 6px 28px 6px 0;
             position: relative;
         }
 
-        .privacy-section ul li::before {
+        .terms-section ul li::before {
             content: "•";
             color: var(--primary);
             font-weight: bold;
@@ -359,11 +359,11 @@
             top: 2px;
         }
 
-        [dir="ltr"] .privacy-section ul li {
+        [dir="ltr"] .terms-section ul li {
             padding: 6px 0 6px 28px;
         }
 
-        [dir="ltr"] .privacy-section ul li::before {
+        [dir="ltr"] .terms-section ul li::before {
             right: auto;
             left: 0;
         }
@@ -411,17 +411,17 @@
         @media (max-width: 768px) {
             .app-title .logo-img { height: 40px; }
             .container { padding: 100px 16px 40px; }
-            .privacy-card { padding: 28px 20px; }
-            .privacy-header h1 { font-size: 1.6rem; }
+            .terms-card { padding: 28px 20px; }
+            .terms-header h1 { font-size: 1.6rem; }
         }
 
         @media (max-width: 480px) {
             .app-title .logo-img { height: 30px; }
-            .privacy-card { padding: 24px 16px; }
-            .privacy-header h1 { font-size: 1.35rem; }
-            .privacy-header .icon { width: 48px; height: 48px; font-size: 1.4rem; }
-            .privacy-section h2 { font-size: 1.15rem; }
-            .privacy-section p, .privacy-section li { font-size: 0.98rem; }
+            .terms-card { padding: 24px 16px; }
+            .terms-header h1 { font-size: 1.35rem; }
+            .terms-header .icon { width: 48px; height: 48px; font-size: 1.4rem; }
+            .terms-section h2 { font-size: 1.15rem; }
+            .terms-section p, .terms-section li { font-size: 0.98rem; }
         }
     </style>
 </head>
@@ -459,69 +459,93 @@
 
     <!-- المحتوى -->
     <div class="container">
-        <div class="privacy-card">
+        <div class="terms-card">
             <!-- رأس الصفحة -->
-            <div class="privacy-header">
+            <div class="terms-header">
                 <div class="icon"><i class="fas fa-file-contract"></i></div>
                 <div>
-                    <h1 id="mainTitle">📜 شروط الاستخدام</h1>
-                    <p class="update-date" id="updateDate">آخر تحديث: 24 نوفمبر 2026</p>
+                    <h1 id="mainTitle">📋 شروط الاستخدام</h1>
+                    <p class="update-date" id="updateDate">آخر تحديث: 25 نوفمبر 2026</p>
                 </div>
             </div>
 
+            <!-- مقدمة -->
+            <div class="terms-section">
+                <p id="welcomeText">مرحبًا بك في تطبيق <strong>MedAtlas</strong>، الموسوعة التعليمية المتخصصة في الأجهزة والمعدات الطبية والهندسة الطبية الحيوية. باستخدامك للتطبيق، فإنك توافق على شروط الاستخدام التالية، لذا يرجى قراءتها بعناية.</p>
+            </div>
+
             <!-- القسم 1 -->
-            <div class="privacy-section">
-                <h2><i class="fas fa-info-circle"></i> <span id="s1Title">1. القبول بالشروط</span></h2>
-                <p id="s1Text">باستخدامك لتطبيق <strong>MedAtlas</strong>، فإنك توافق تماماً على الالتزام بشروط الاستخدام هذه. إذا كنت لا توافق على أي جزء منها، يرجى عدم استخدام التطبيق.</p>
+            <div class="terms-section">
+                <h2><i class="fas fa-book-medical"></i> <span id="s1Title">1. طبيعة التطبيق</span></h2>
+                <p id="s1Text">يهدف MedAtlas إلى توفير محتوى تعليمي ومعرفي حول الأجهزة الطبية، بما في ذلك مبادئ العمل، والمكونات، والاستخدامات، والمعلومات الفنية، وأساسيات الصيانة والهندسة الطبية.</p>
+                <ul>
+                    <li id="s1li1">التطبيق مخصص للطلاب والمهندسين والفنيين والعاملين في المجال الصحي وكل المهتمين بالأجهزة الطبية.</li>
+                </ul>
             </div>
 
             <!-- القسم 2 -->
-            <div class="privacy-section">
-                <h2><i class="fas fa-user-check"></i> <span id="s2Title">2. حساب المستخدم والبيانات الشخصية</span></h2>
-                <p id="s2Text">لتفعيل ميزات التفاعل داخل التطبيق، فإنك توافق على مشاركة بعض البيانات الأساسية وتشمل:</p>
+            <div class="terms-section">
+                <h2><i class="fas fa-check-circle"></i> <span id="s2Title">2. الاستخدام المسموح</span></h2>
                 <ul>
-                    <li id="s2li1"><strong>الاسم:</strong> لتعريف هويتك وحسابك للمستخدمين الآخرين.</li>
-                    <li id="s2li2"><strong>الصور:</strong> مشاركة الصور والوسائط الخاصة بك عبر التطبيق.</li>
-                    <li id="s2li3"><strong>معرف الجهاز (Device ID):</strong> لربط وتأمين حسابك بجهازك المستخدم وضمان الأمان.</li>
+                    <li id="s2li1">استخدام التطبيق لأغراض التعليم والتعلم والبحث العلمي.</li>
+                    <li id="s2li2">الاستفادة من المعلومات الفنية والتوضيحية المتاحة.</li>
+                    <li id="s2li3">استخدام المحتوى كمرجع مساعد في مجال الهندسة الطبية.</li>
                 </ul>
             </div>
 
             <!-- القسم 3 -->
-            <div class="privacy-section">
-                <h2><i class="fas fa-shield-alt"></i> <span id="s3Title">3. سلوك المسؤولية والاستخدام المقبول</span></h2>
+            <div class="terms-section">
+                <h2><i class="fas fa-exclamation-triangle"></i> <span id="s3Title">3. إخلاء المسؤولية الطبية والفنية</span></h2>
                 <div class="highlight-box">
-                    <p id="s3Text"><strong>تعهد المستخدم:</strong> تلتزم بعدم استخدام اسمك أو صورك أو معرف جهازك في نشر أي محتوى يخالف القوانين، أو يتضمن إساءة، أو ينتهك حقوق الآخرين، أو يضر بالأمن العام.</p>
+                    <p id="s3Text"><strong>تنبيه هامة:</strong> المعلومات الواردة في التطبيق لأغراض تعليمية وتثقيفية فقط، ولا يُعد التطبيق بديلًا عن كتيبات التشغيل والصيانة الرسمية الصادرة عن الشركات المصنعة.</p>
                 </div>
+                <ul>
+                    <li id="s3li1">لا ينبغي الاعتماد على المعلومات الموجودة في التطبيق وحدها لاتخاذ قرارات تتعلق بسلامة المرضى أو تشغيل الأجهزة الطبية.</li>
+                    <li id="s3li2">يجب تنفيذ أعمال الصيانة والإصلاح والمعايرة بواسطة أشخاص مؤهلين ووفق تعليمات الشركة المصنعة ومعايير السلامة المعتمدة.</li>
+                    <li id="s3li3">لا يتحمل مطورو التطبيق مسؤولية الأضرار الناتجة عن سوء استخدام المعلومات أو تطبيقها دون الخبرة والتأهيل المناسبين.</li>
+                </ul>
             </div>
 
             <!-- القسم 4 -->
-            <div class="privacy-section">
-                <h2><i class="fas fa-copyright"></i> <span id="s4Title">4. الملكية الفكرية</span></h2>
-                <p id="s4Text">جميع المحتويات، التصاميم، الشعارات، والمواد التعليمية الخاصة بالأجهزة الطبية داخل <strong>MedAtlas</strong> هي ملكية حصرية للتطبيق ومحمية بقوانين الملكية الفكرية.</p>
+            <div class="terms-section">
+                <h2><i class="fas fa-sync-alt"></i> <span id="s4Title">4. دقة المعلومات وتحديثها</span></h2>
+                <p id="s4Text">نسعى إلى تقديم معلومات دقيقة ومحدثة قدر الإمكان، ولكن قد تحتوي بعض المعلومات على أخطاء أو تكون غير مكتملة أو تختلف باختلاف طراز الجهاز والشركة المصنعة. لا نضمن خلو جميع المعلومات من الأخطاء، ونحتفظ بحق تعديل المحتوى أو تحديثه أو حذفه في أي وقت.</p>
             </div>
 
             <!-- القسم 5 -->
-            <div class="privacy-section">
-                <h2><i class="fas fa-ban"></i> <span id="s5Title">5. حظر وإلغاء الحساب</span></h2>
-                <p id="s5Text">يحق لإدارة التطبيق تعليق أو إيقاف حسابك أو حظر معرف الجهاز الخاص بك فوراً في حال ثبوت أي انتهاك لشروط الاستخدام أو الإساءة للخدمة.</p>
+            <div class="terms-section">
+                <h2><i class="fas fa-copyright"></i> <span id="s5Title">5. الملكية الفكرية</span></h2>
+                <p id="s5Text">جميع الحقوق المتعلقة باسم MedAtlas وهويته البصرية وتصميم التطبيق ومحتواه الأصلي محفوظة لأصحابها. لا يُسمح بنسخ التطبيق أو إعادة توزيعه أو استغلال محتواه الأصلي تجاريًا دون الحصول على إذن مسبق. أما المواد والصور والمراجع التابعة لجهات أو شركات أخرى، فتظل حقوقها محفوظة لأصحابها الأصليين.</p>
             </div>
 
             <!-- القسم 6 -->
-            <div class="privacy-section">
-                <h2><i class="fas fa-stethoscope"></i> <span id="s6Title">6. إخلاء المسؤولية الطبية والتعليمية</span></h2>
-                <p id="s6Text">المحتوى المعروض في التطبيق مخصص للأغراض التعليمية والمهنية للأجهزة الطبية فقط، ولا يمثل استشارة طبية رسمية أو معتمدة.</p>
+            <div class="terms-section">
+                <h2><i class="fas fa-external-link-alt"></i> <span id="s6Title">6. المصادر الخارجية</span></h2>
+                <p id="s6Text">قد يحتوي التطبيق على روابط أو مراجع لمواقع خارجية أو شركات مصنعة للأجهزة الطبية. هذه المواقع مستقلة عن MedAtlas، ولا نتحمل مسؤولية محتواها أو سياسات الخصوصية أو الخدمات التي تقدمها.</p>
             </div>
 
             <!-- القسم 7 -->
-            <div class="privacy-section">
-                <h2><i class="fas fa-tools"></i> <span id="s7Title">7. التعديلات والخدمات</span></h2>
-                <p id="s7Text">نحتفظ بالحق في تعديل أو إيقاف أي ميزة في التطبيق أو تحديث هذه الشروط في أي وقت دون إشعار مسبق.</p>
+            <div class="terms-section">
+                <h2><i class="fas fa-ad"></i> <span id="s7Title">7. الإعلانات والدعم</span></h2>
+                <p id="s7Text">قد يحتوي التطبيق على إعلانات للمساعدة في تغطية تكاليف التطوير والاستضافة والصيانة، والمساهمة في استمرار تقديم الخدمات مجانًا.</p>
             </div>
 
             <!-- القسم 8 -->
-            <div class="privacy-section footer-contact">
-                <h2><i class="fas fa-envelope"></i> <span id="s8Title">8. التواصل والدعم</span></h2>
-                <p id="s8Text">لأي استفسارات تتعلق بشروط الاستخدام، يمكنك مراسلتنا عبر البريد الإلكتروني:</p>
+            <div class="terms-section">
+                <h2><i class="fas fa-user-shield"></i> <span id="s8Title">8. الخصوصية والبيانات</span></h2>
+                <p id="s8Text">يهدف التطبيق إلى توفير تجربة تعليمية دون الحاجة إلى إنشاء حساب شخصي أو إدخال اسم أو صورة شخصية أو استخدام نظام دردشة. قد تستخدم بعض الخدمات التقنية، مثل خدمات Firebase، بيانات تقنية ضرورية لتشغيل التطبيق وتقديم خدماته، وفق إعدادات تلك الخدمات.</p>
+            </div>
+
+            <!-- القسم 9 -->
+            <div class="terms-section">
+                <h2><i class="fas fa-edit"></i> <span id="s9Title">9. التعديلات على الشروط</span></h2>
+                <p id="s9Text">نحتفظ بالحق في تعديل شروط الاستخدام عند الحاجة، وسيتم نشر النسخة المحدثة داخل التطبيق.</p>
+            </div>
+
+            <!-- القسم 10 -->
+            <div class="terms-section footer-contact">
+                <h2><i class="fas fa-envelope"></i> <span id="s10Title">10. التواصل</span></h2>
+                <p id="s10Text">إذا كانت لديك ملاحظات أو استفسارات أو اقتراحات تتعلق بالتطبيق، يمكنك التواصل مع فريق MedAtlas عبر وسائل التواصل الرسمية المتاحة:</p>
                 <p style="margin-top: 10px;">
                     <i class="fas fa-at" style="color: var(--primary);"></i>
                     <a href="mailto:HusseinMutair690@gmail.com">HusseinMutair690@gmail.com</a>
@@ -534,50 +558,66 @@
         // ============ الترجمات ============
         const translations = {
             ar: {
-                mainTitle: '📜 شروط الاستخدام',
-                updateDate: 'آخر تحديث: 24 نوفمبر 2026',
-                s1Title: '1. القبول بالشروط',
-                s1Text: 'باستخدامك لتطبيق <strong>MedAtlas</strong>، فإنك توافق تماماً على الالتزام بشروط الاستخدام هذه. إذا كنت لا توافق على أي جزء منها، يرجى عدم استخدام التطبيق.',
-                s2Title: '2. حساب المستخدم والبيانات الشخصية',
-                s2Text: 'لتفعيل ميزات التفاعل داخل التطبيق، فإنك توافق على مشاركة بعض البيانات الأساسية وتشمل:',
-                s2li1: '<strong>الاسم:</strong> لتعريف هويتك وحسابك للمستخدمين الآخرين.',
-                s2li2: '<strong>الصور:</strong> مشاركة الصور والوسائط الخاصة بك عبر التطبيق.',
-                s2li3: '<strong>معرف الجهاز (Device ID):</strong> لربط وتأمين حسابك بجهازك المستخدم وضمان الأمان.',
-                s3Title: '3. سلوك المسؤولية والاستخدام المقبول',
-                s3Text: '<strong>تعهد المستخدم:</strong> تلتزم بعدم استخدام اسمك أو صورك أو معرف جهازك في نشر أي محتوى يخالف القوانين، أو يتضمن إساءة، أو ينتهك حقوق الآخرين، أو يضر بالأمن العام.',
-                s4Title: '4. الملكية الفكرية',
-                s4Text: 'جميع المحتويات، التصاميم، الشعارات، والمواد التعليمية الخاصة بالأجهزة الطبية داخل <strong>MedAtlas</strong> هي ملكية حصرية للتطبيق ومحمية بقوانين الملكية الفكرية.',
-                s5Title: '5. حظر وإلغاء الحساب',
-                s5Text: 'يحق لإدارة التطبيق تعليق أو إيقاف حسابك أو حظر معرف الجهاز الخاص بك فوراً في حال ثبوت أي انتهاك لشروط الاستخدام أو الإساءة للخدمة.',
-                s6Title: '6. إخلاء المسؤولية الطبية والتعليمية',
-                s6Text: 'المحتوى المعروض في التطبيق مخصص للأغراض التعليمية والمهنية للأجهزة الطبية فقط، ولا يمثل استشارة طبية رسمية أو معتمدة.',
-                s7Title: '7. التعديلات والخدمات',
-                s7Text: 'نحتفظ بالحق في تعديل أو إيقاف أي ميزة في التطبيق أو تحديث هذه الشروط في أي وقت دون إشعار مسبق.',
-                s8Title: '8. التواصل والدعم',
-                s8Text: 'لأي استفسارات تتعلق بشروط الاستخدام، يمكنك مراسلتنا عبر البريد الإلكتروني:'
+                mainTitle: '📋 شروط الاستخدام',
+                updateDate: 'آخر تحديث: 25 نوفمبر 2026',
+                welcomeText: 'مرحبًا بك في تطبيق <strong>MedAtlas</strong>، الموسوعة التعليمية المتخصصة في الأجهزة والمعدات الطبية والهندسة الطبية الحيوية. باستخدامك للتطبيق، فإنك توافق على شروط الاستخدام التالية، لذا يرجى قراءتها بعناية.',
+                s1Title: '1. طبيعة التطبيق',
+                s1Text: 'يهدف MedAtlas إلى توفير محتوى تعليمي ومعرفي حول الأجهزة الطبية، بما في ذلك مبادئ العمل، والمكونات، والاستخدامات، والمعلومات الفنية، وأساسيات الصيانة والهندسة الطبية.',
+                s1li1: 'التطبيق مخصص للطلاب والمهندسين والفنيين والعاملين في المجال الصحي وكل المهتمين بالأجهزة الطبية.',
+                s2Title: '2. الاستخدام المسموح',
+                s2li1: 'استخدام التطبيق لأغراض التعليم والتعلم والبحث العلمي.',
+                s2li2: 'الاستفادة من المعلومات الفنية والتوضيحية المتاحة.',
+                s2li3: 'استخدام المحتوى كمرجع مساعد في مجال الهندسة الطبية.',
+                s3Title: '3. إخلاء المسؤولية الطبية والفنية',
+                s3Text: '<strong>تنبيه هام:</strong> المعلومات الواردة في التطبيق لأغراض تعليمية وتثقيفية فقط، ولا يُعد التطبيق بديلًا عن كتيبات التشغيل والصيانة الرسمية الصادرة عن الشركات المصنعة.',
+                s3li1: 'لا ينبغي الاعتماد على المعلومات الموجودة في التطبيق وحدها لاتخاذ قرارات تتعلق بسلامة المرضى أو تشغيل الأجهزة الطبية.',
+                s3li2: 'يجب تنفيذ أعمال الصيانة والإصلاح والمعايرة بواسطة أشخاص مؤهلين ووفق تعليمات الشركة المصنعة ومعايير السلامة المعتمدة.',
+                s3li3: 'لا يتحمل مطورو التطبيق مسؤولية الأضرار الناتجة عن سوء استخدام المعلومات أو تطبيقها دون الخبرة والتأهيل المناسبين.',
+                s4Title: '4. دقة المعلومات وتحديثها',
+                s4Text: 'نسعى إلى تقديم معلومات دقيقة ومحدثة قدر الإمكان، ولكن قد تحتوي بعض المعلومات على أخطاء أو تكون غير مكتملة أو تختلف باختلاف طراز الجهاز والشركة المصنعة. لا نضمن خلو جميع المعلومات من الأخطاء، ونحتفظ بحق تعديل المحتوى أو تحديثه أو حذفه في أي وقت.',
+                s5Title: '5. الملكية الفكرية',
+                s5Text: 'جميع الحقوق المتعلقة باسم MedAtlas وهويته البصرية وتصميم التطبيق ومحتواه الأصلي محفوظة لأصحابها. لا يُسمح بنسخ التطبيق أو إعادة توزيعه أو استغلال محتواه الأصلي تجاريًا دون الحصول على إذن مسبق. أما المواد والصور والمراجع التابعة لجهات أو شركات أخرى، فتظل حقوقها محفوظة لأصحابها الأصليين.',
+                s6Title: '6. المصادر الخارجية',
+                s6Text: 'قد يحتوي التطبيق على روابط أو مراجع لمواقع خارجية أو شركات مصنعة للأجهزة الطبية. هذه المواقع مستقلة عن MedAtlas، ولا نتحمل مسؤولية محتواها أو سياسات الخصوصية أو الخدمات التي تقدمها.',
+                s7Title: '7. الإعلانات والدعم',
+                s7Text: 'قد يحتوي التطبيق على إعلانات للمساعدة في تغطية تكاليف التطوير والاستضافة والصيانة، والمساهمة في استمرار تقديم الخدمات مجانًا.',
+                s8Title: '8. الخصوصية والبيانات',
+                s8Text: 'يهدف التطبيق إلى توفير تجربة تعليمية دون الحاجة إلى إنشاء حساب شخصي أو إدخال اسم أو صورة شخصية أو استخدام نظام دردشة. قد تستخدم بعض الخدمات التقنية، مثل خدمات Firebase، بيانات تقنية ضرورية لتشغيل التطبيق وتقديم خدماته، وفق إعدادات تلك الخدمات.',
+                s9Title: '9. التعديلات على الشروط',
+                s9Text: 'نحتفظ بالحق في تعديل شروط الاستخدام عند الحاجة، وسيتم نشر النسخة المحدثة داخل التطبيق.',
+                s10Title: '10. التواصل',
+                s10Text: 'إذا كانت لديك ملاحظات أو استفسارات أو اقتراحات تتعلق بالتطبيق، يمكنك التواصل مع فريق MedAtlas عبر وسائل التواصل الرسمية المتاحة:'
             },
             en: {
-                mainTitle: '📜 Terms of Use',
-                updateDate: 'Last Updated: November 24, 2026',
-                s1Title: '1. Acceptance of Terms',
-                s1Text: 'By using the <strong>MedAtlas</strong> application, you fully agree to comply with these terms of use. If you do not agree with any part of them, please do not use the app.',
-                s2Title: '2. User Account and Personal Data',
-                s2Text: 'To enable interactive features within the app, you agree to share certain essential data, including:',
-                s2li1: '<strong>Name:</strong> To identify your identity and account to other users.',
-                s2li2: '<strong>Photos:</strong> Sharing your photos and media through the app.',
-                s2li3: '<strong>Device ID:</strong> To link and secure your account to your device and ensure safety.',
-                s3Title: '3. Responsibility and Acceptable Use',
-                s3Text: '<strong>User Undertaking:</strong> You commit not to use your name, photos, or Device ID to publish any content that violates laws, includes abuse, infringes on the rights of others, or harms public security.',
-                s4Title: '4. Intellectual Property',
-                s4Text: 'All content, designs, logos, and medical device educational materials within <strong>MedAtlas</strong> are the exclusive property of the app and protected by intellectual property laws.',
-                s5Title: '5. Account Suspension and Termination',
-                s5Text: 'The app management reserves the right to suspend or terminate your account or block your Device ID immediately if any violation of the terms of use or abuse of the service is proven.',
-                s6Title: '6. Medical and Educational Disclaimer',
-                s6Text: 'The content displayed in the app is intended for educational and professional medical device purposes only and does not constitute formal or certified medical advice.',
-                s7Title: '7. Modifications and Services',
-                s7Text: 'We reserve the right to modify or discontinue any feature in the app or update these terms at any time without prior notice.',
-                s8Title: '8. Contact and Support',
-                s8Text: 'For any inquiries regarding the terms of use, you can contact us via email:'
+                mainTitle: '📋 Terms of Use',
+                updateDate: 'Last Updated: November 25, 2026',
+                welcomeText: 'Welcome to <strong>MedAtlas</strong>, the educational encyclopedia specialized in medical devices, equipment, and biomedical engineering. By using the app, you agree to the following terms of use, so please read them carefully.',
+                s1Title: '1. Nature of the App',
+                s1Text: 'MedAtlas aims to provide educational and cognitive content about medical devices, including operating principles, components, uses, technical information, and the basics of maintenance and medical engineering.',
+                s1li1: 'The app is dedicated to students, engineers, technicians, healthcare workers, and anyone interested in medical equipment.',
+                s2Title: '2. Permitted Use',
+                s2li1: 'Using the app for education, learning, and scientific research purposes.',
+                s2li2: 'Benefiting from the available technical and illustrative information.',
+                s2li3: 'Using the content as a supporting reference in the field of medical engineering.',
+                s3Title: '3. Medical and Technical Disclaimer',
+                s3Text: '<strong>Important Notice:</strong> The information contained in the app is for educational and informational purposes only and is not a substitute for official operation and maintenance manuals issued by manufacturers.',
+                s3li1: 'Information in the app should not be solely relied upon to make decisions regarding patient safety or medical device operation.',
+                s3li2: 'Maintenance, repair, and calibration work must be performed by qualified personnel in accordance with the manufacturer instructions and approved safety standards.',
+                s3li3: 'The app developers are not responsible for damages resulting from misuse of the information or applying it without appropriate experience and qualification.',
+                s4Title: '4. Accuracy and Updates of Information',
+                s4Text: 'We strive to provide accurate and up-to-date information as much as possible, but some information may contain errors, be incomplete, or vary depending on the device model and manufacturer. We do not guarantee that all information is free of errors, and we reserve the right to modify, update, or delete content at any time.',
+                s5Title: '5. Intellectual Property',
+                s5Text: 'All rights related to the MedAtlas name, visual identity, app design, and original content belong to their respective owners. Copying, redistributing, or commercially exploiting the original content without prior permission is not permitted. Materials, images, and references belonging to other entities or companies remain the property of their original owners.',
+                s6Title: '6. External Sources',
+                s6Text: 'The app may contain links or references to external websites or medical device manufacturers. These sites are independent of MedAtlas, and we are not responsible for their content, privacy policies, or services provided.',
+                s7Title: '7. Ads and Support',
+                s7Text: 'The app may contain advertisements to help cover development, hosting, and maintenance costs, and contribute to the continued provision of free services.',
+                s8Title: '8. Privacy and Data',
+                s8Text: 'The app aims to provide an educational experience without the need to create a personal account, enter a name, personal photo, or use a chat system. Technical services, such as Firebase services, may use technical data necessary to operate the app and provide its services, in accordance with the settings of those services.',
+                s9Title: '9. Changes to Terms',
+                s9Text: 'We reserve the right to modify the terms of use when necessary, and the updated version will be published inside the app.',
+                s10Title: '10. Contact',
+                s10Text: 'If you have any feedback, inquiries, or suggestions regarding the app, you can contact the MedAtlas team through the official communication channels available:'
             }
         };
 
@@ -594,17 +634,19 @@
 
             document.getElementById('mainTitle').innerHTML = t.mainTitle;
             document.getElementById('updateDate').textContent = t.updateDate;
+            document.getElementById('welcomeText').innerHTML = t.welcomeText;
 
             const setText = (id, val) => { const el = document.getElementById(id); if (el) el.innerHTML = val; };
-            setText('s1Title', t.s1Title); setText('s1Text', t.s1Text);
-            setText('s2Title', t.s2Title); setText('s2Text', t.s2Text);
-            setText('s2li1', t.s2li1); setText('s2li2', t.s2li2); setText('s2li3', t.s2li3);
-            setText('s3Title', t.s3Title); setText('s3Text', t.s3Text);
+            setText('s1Title', t.s1Title); setText('s1Text', t.s1Text); setText('s1li1', t.s1li1);
+            setText('s2Title', t.s2Title); setText('s2li1', t.s2li1); setText('s2li2', t.s2li2); setText('s2li3', t.s2li3);
+            setText('s3Title', t.s3Title); setText('s3Text', t.s3Text); setText('s3li1', t.s3li1); setText('s3li2', t.s3li2); setText('s3li3', t.s3li3);
             setText('s4Title', t.s4Title); setText('s4Text', t.s4Text);
             setText('s5Title', t.s5Title); setText('s5Text', t.s5Text);
             setText('s6Title', t.s6Title); setText('s6Text', t.s6Text);
             setText('s7Title', t.s7Title); setText('s7Text', t.s7Text);
             setText('s8Title', t.s8Title); setText('s8Text', t.s8Text);
+            setText('s9Title', t.s9Title); setText('s9Text', t.s9Text);
+            setText('s10Title', t.s10Title); setText('s10Text', t.s10Text);
 
             localStorage.setItem('medatlasTermsLang', lang);
             currentLang = lang;
