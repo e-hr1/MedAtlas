@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>دعم MedAtlas</title>
+
+    <!-- SEO -->
+    <meta name="description" content="ادعم تطوير MedAtlas، الموسوعة التعليمية للأجهزة الطبية." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#4A6CF7" />
+    <link rel="icon" type="image/png" href="image/favicon.png" />
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
+
+    <style>
+        /* ===== المتغيرات (مطابقة لصفحة شروط الاستخدام) ===== */
+        :root {
+            -webkit-tap-highlight-color: transparent;
+            --TextColor: #1A1C1E;
+            --primary: #4A6CF7;
+            --primary-light: #6B8AFF;
+            --primary-glow: rgba(107, 138, 255, 0.5);
+            --secondary: #FF6B6B;
+            --background: #f5f7ff;
+            --background2: #889FF9;
+            --background-top: #F0F5FF;
+            --background-bottom: #FFFFFF;
+            --card: #FFFFFF;
+            --text: #2D3748;
+            --text-body: #4B5563;
+            --text-light: #718096;
+            --border: #E3E8F0;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --shadow-card: 0 15px 35px rgba(120, 146, 192, 0.08);
+            --radius: 16px;
+            --radius-sm: 14px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --blur: 8px;
+            --glass-opacity: 0.85;
+            --glass-border: 1px solid rgba(255, 255, 255, 0.3);
+            --glass-background: rgba(255, 255, 255, var(--glass-opacity));
+        }
+
+        .dark-mode {
+            --TextColor: #F1F4F8;
+            --primary: #6B8AFF;
+            --primary-light: #8BA4FF;
+            --primary-glow: rgba(107, 138, 255, 0.5);
+            --secondary: #FF8B8B;
+            --background: #0f172a;
+            --background2: #1a223f;
+            --background-top: #131A24;
+            --background-bottom: #0B0E13;
+            --card: #1e293b;
+            --text: #f8fafc;
+            --text-body: #C5CCD8;
+            --text-light: #9BA3B0;
+            --border: #2C3444;
+            --shadow: 0 10px 30px rgba(107, 138, 255, 0.15);
+            --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.30);
+            --blur: 0px;
+            --glass-opacity: 0.9;
+            --glass-border: 1px solid rgba(107, 138, 255, 0.1);
+            --glass-background: rgba(30, 41, 59, var(--glass-opacity));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(180deg, var(--background-top), var(--background-bottom));
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, transparent 60%);
+            opacity: 0.06;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .glass-effect {
+            background: var(--glass-background);
+            backdrop-filter: blur(var(--blur)) saturate(180%);
+            -webkit-backdrop-filter: blur(var(--blur)) saturate(180%);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: var(--glass-border);
+        }
+
+        /* ============ شريط التطبيق ============ */
+        .app-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background-color: rgba(74, 108, 247, 0.9);
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-bottom: 1px solid transparent;
+            border-radius: 0;
+            transition: all 0.4s ease;
+        }
+
+        .app-bar.scrolled {
+            background-color: rgba(74, 108, 247, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 2px;
+        }
+
+        .dark-mode .app-bar {
+            background-color: rgba(26, 34, 63, 0.9);
+            box-shadow: 0 0 0px var(--primary-glow);
+        }
+
+        .dark-mode .app-bar.scrolled {
+            background-color: rgba(26, 34, 63, 0.9);
+            border-bottom: 1px solid rgba(107, 138, 255, 0.2);
+            box-shadow: 0 0 25px var(--primary-glow);
+        }
+
+        .app-title {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .app-title .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            transition: all 0.3s ease;
+        }
+
+        .app-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        /* --- قائمة اللغة --- */
+        .spinner-menu {
+            position: relative;
+            display: inline-block;
+        }
+
+        .spinner-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .spinner-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .spinner-content {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background: var(--glass-background);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            border: var(--glass-border);
+            min-width: 150px;
+        }
+
+        .spinner-menu:hover .spinner-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .spinner-item {
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: var(--text);
+            text-decoration: none;
+            gap: 10px;
+        }
+
+        .spinner-item:hover {
+            background-color: rgba(74, 108, 247, 0.1);
+            border-radius: var(--radius);
+        }
+
+        .spinner-item i {
+            width: 20px;
+            text-align: center;
+        }
+
+        /* --- زر الوضع الداكن --- */
+        .dark-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .dark-toggle i {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .dark-toggle .active {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        /* ============ المحتوى ============ */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 110px 24px 60px;
+        }
+
+        .support-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 40px 35px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border);
+            animation: slideUp 0.6s ease-out forwards;
+        }
+
+        /* --- رأس البطاقة --- */
+        .support-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid rgba(74, 108, 247, 0.15);
+            padding-bottom: 20px;
+        }
+
+        .support-header .icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(74, 108, 247, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .support-header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .support-header .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* --- العناوين --- */
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        /* --- اختيار المبلغ --- */
+        .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .amount {
+            border: 1px solid var(--border);
+            background: var(--background);
+            color: var(--text-body);
+            border-radius: 12px;
+            padding: 14px 5px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .amount:hover {
+            border-color: var(--primary-light);
+            background: rgba(74, 108, 247, 0.04);
+        }
+
+        .amount.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(74, 108, 247, 0.25);
+        }
+
+        .custom-input {
+            width: 100%;
+            border: 1px solid var(--border);
+            background: var(--background);
+            color: var(--text);
+            border-radius: 12px;
+            padding: 13px 15px;
+            outline: none;
+            font-size: 1rem;
+            display: none;
+            margin-top: 10px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .custom-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.1);
+        }
+
+        .amount-hint {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+
+        /* --- بطاقة المحفظة --- */
+        .wallet-card {
+            margin-top: 28px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 24px 20px;
+            background: var(--background);
+            text-align: center;
+        }
+
+        .network-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(22, 163, 74, 0.10);
+            color: #16A34A;
+            border: 1px solid rgba(22, 163, 74, 0.2);
+            border-radius: 30px;
+            padding: 6px 14px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin: 10px 0 18px;
+        }
+
+        .dark-mode .network-badge {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ADE80;
+            border-color: rgba(74, 222, 128, 0.25);
+        }
+
+        .qr-wrapper {
+            width: 185px;
+            height: 185px;
+            background: white;
+            padding: 12px;
+            border-radius: 15px;
+            margin: 0 auto 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--border);
+        }
+
+        #qrcode img, #qrcode canvas {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .wallet-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .wallet-address {
+            background: var(--card);
+            border: 1px dashed var(--primary);
+            border-radius: 12px;
+            padding: 13px 10px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            direction: ltr;
+            word-break: break-all;
+            color: var(--text);
+            user-select: all;
+        }
+
+        .copy-btn {
+            width: 100%;
+            margin-top: 12px;
+            border: 0;
+            background: var(--primary);
+            color: white;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .copy-btn:hover {
+            background: var(--primary-light);
+            box-shadow: 0 5px 15px rgba(74, 108, 247, 0.25);
+        }
+
+        .copy-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* --- تنبيه --- */
+        .notice {
+            margin-top: 22px;
+            padding: 16px 20px;
+            background: rgba(245, 158, 11, 0.08);
+            border-right: 4px solid #F59E0B;
+            border-radius: 10px;
+            color: var(--text-body);
+            font-size: 0.95rem;
+        }
+
+        [dir="ltr"] .notice {
+            border-right: none;
+            border-left: 4px solid #F59E0B;
+        }
+
+        .dark-mode .notice {
+            background: rgba(245, 158, 11, 0.12);
+        }
+
+        .notice-title {
+            color: #D99018;
+            font-weight: 800;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dark-mode .notice-title {
+            color: #FBBF24;
+        }
+
+        /* --- خطوات --- */
+        .steps {
+            margin-top: 28px;
+        }
+
+        .step {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 16px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(74, 108, 247, 0.1);
+            color: var(--primary);
+            border-radius: 9px;
+            font-weight: 800;
+        }
+
+        .dark-mode .step-number {
+            background: rgba(107, 138, 255, 0.15);
+        }
+
+        .step-text {
+            font-size: 1rem;
+            color: var(--text-body);
+            padding-top: 4px;
+        }
+
+        /* --- شكر --- */
+        .thankyou {
+            margin-top: 28px;
+            text-align: center;
+            padding: 24px 10px;
+            border-top: 1px solid rgba(74, 108, 247, 0.15);
+        }
+
+        .thankyou i {
+            color: #E85D75;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .thankyou h3 {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+
+        .thankyou p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* --- Toast --- */
+        .toast {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translate(-50%, 100px);
+            opacity: 0;
+            background: #1E293B;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            z-index: 999;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .toast.show {
+            transform: translate(-50%, 0);
+            opacity: 1;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            padding: 20px;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============ استجابة ============ */
+        @media (max-width: 768px) {
+            .app-title .logo-img { height: 40px; }
+            .container { padding: 100px 16px 40px; }
+            .support-card { padding: 28px 20px; }
+            .support-header h1 { font-size: 1.6rem; }
+        }
+
+        @media (max-width: 480px) {
+            .app-title .logo-img { height: 30px; }
+            .support-card { padding: 24px 16px; }
+            .support-header h1 { font-size: 1.35rem; }
+            .support-header .icon { width: 48px; height: 48px; font-size: 1.4rem; }
+            .section-title { font-size: 1.15rem; }
+            .amount-grid { gap: 7px; }
+            .amount { font-size: 0.85rem; padding: 11px 3px; }
+            .wallet-address { font-size: 0.78rem; }
+            .step-text { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التطبيق -->
+    <header class="app-bar glass-effect" id="appBar">
+        <div class="app-title">
+            <img src="logo_MedAtlas.webp"
+                 alt="MedAtlas Logo"
+                 class="logo-img"
+                 onerror="this.onerror=null;this.src='logo_MedAtlas.webp';" />
+        </div>
+        <div class="app-actions">
+            <div class="spinner-menu">
+                <button class="spinner-btn">
+                    <i class="fas fa-language"></i>
+                </button>
+                <div class="spinner-content glass-effect">
+                    <div class="spinner-item" onclick="changeLanguage('ar')">
+                        <i class="fas fa-language"></i>
+                        <span>العربية</span>
+                    </div>
+                    <div class="spinner-item" onclick="changeLanguage('en')">
+                        <i class="fas fa-language"></i>
+                        <span>English</span>
+                    </div>
+                </div>
+            </div>
+            <div class="dark-toggle" id="darkModeToggle">
+                <i class="fas fa-sun" id="lightIcon"></i>
+                <i class="fas fa-moon active" id="darkIcon"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- المحتوى -->
+    <div class="container">
+        <div class="support-card">
+            <!-- رأس الصفحة -->
+            <div class="support-header">
+                <div class="icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <div>
+                    <h1 id="heroTitle">ساهم في دعمنا 🤗</h1>
+                    <p class="subtitle" id="heroText">مساهمتك تساعدنا على تطوير MedAtlas وإبقاء المعرفة الطبية الهندسية متاحة للجميع وخالية من الإعلانات.</p>
+                </div>
+            </div>
+
+            <!-- اختيار المبلغ -->
+            <div class="section-title">
+                <i class="fas fa-coins"></i>
+                <span id="amountTitle">اختر مبلغ المساهمة</span>
+            </div>
+
+            <div class="amount-grid">
+                <button class="amount" onclick="selectAmount(5, this)">5 USDT</button>
+                <button class="amount" onclick="selectAmount(10, this)">10 USDT</button>
+                <button class="amount" onclick="selectAmount(20, this)">20 USDT</button>
+                <button class="amount" onclick="selectAmount(50, this)">50 USDT</button>
+            </div>
+
+            <input
+                type="number"
+                id="customAmount"
+                class="custom-input"
+                min="1"
+                step="any"
+                placeholder="أدخل المبلغ الذي تريده (USDT)"
+            >
+
+            <p class="amount-hint" id="amountHint">المبلغ اختياري ويمكنك إرسال أي قيمة تريدها.</p>
+
+            <!-- بطاقة المحفظة -->
+            <div class="wallet-card">
+                <div class="section-title" style="justify-content:center; margin-bottom:0;">
+                    <i class="fas fa-wallet"></i>
+                    <span id="walletTitle">محفظة استقبال المساهمات</span>
+                </div>
+
+                <div class="network-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>USDT · TRON (TRC20)</span>
+                </div>
+
+                <div class="qr-wrapper">
+                    <div id="qrcode"></div>
+                </div>
+
+                <div class="wallet-label" id="addressLabel">عنوان المحفظة</div>
+
+                <div class="wallet-address" id="walletAddress">TAu3aDVdKoFuSHCUmUZgEctUHEZE4ftB7i</div>
+
+                <button class="copy-btn" onclick="copyAddress()">
+                    <i class="fas fa-copy"></i>
+                    <span id="copyText">نسخ عنوان المحفظة</span>
+                </button>
+            </div>
+
+            <!-- تنبيه -->
+            <div class="notice">
+                <div class="notice-title">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span id="warningTitle">تنبيه مهم قبل التحويل</span>
+                </div>
+                <p id="warningText">تأكد من إرسال USDT عبر شبكة TRON (TRC20) فقط. إرسال العملات عبر شبكة مختلفة قد يؤدي إلى فقدان أموالك. رمز QR يحتوي على عنوان المحفظة فقط؛ حدد المبلغ في محفظتك قبل الإرسال.</p>
+            </div>
+
+            <!-- خطوات -->
+            <div class="steps">
+                <div class="section-title">
+                    <i class="fas fa-list-check"></i>
+                    <span id="stepsTitle">كيفية المساهمة</span>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <p class="step-text" id="step1">اختر المبلغ الذي ترغب في المساهمة به.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <p class="step-text" id="step2">انسخ عنوان المحفظة أو امسح رمز QR.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <p class="step-text" id="step3">أرسل USDT عبر شبكة TRC20 وتأكد من صحة العنوان.</p>
+                </div>
+            </div>
+
+            <!-- شكر -->
+            <div class="thankyou">
+                <i class="fas fa-heart"></i>
+                <h3 id="thanksTitle">شكرًا لدعمك ❤️</h3>
+                <p id="thanksText">كل مساهمة تساعدنا على الاستمرار في تطوير MedAtlas وإضافة المزيد من الأجهزة والمعلومات والحلول.</p>
+            </div>
+        </div>
+
+        <footer class="footer">© MedAtlas · All Rights Reserved</footer>
+    </div>
+
+    <div class="toast" id="toast">تم نسخ عنوان المحفظة بنجاح ✓</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script>
+        // ============ الثوابت ============
+        const ADDRESS = "TAu3aDVdKoFuSHCUmUZgEctUHEZE4ftB7i";
+
+        // ============ الحالة ============
+        let selectedAmount = null;
+        let currentLang = localStorage.getItem('medatlasSupportLang') || 'ar';
+
+        // ============ الترجمات ============
+        const translations = {
+            ar: {
+                heroTitle: 'ساهم في دعمنا 🤗',
+                heroText: 'مساهمتك تساعدنا على تطوير MedAtlas وإبقاء المعرفة الطبية الهندسية متاحة للجميع وخالية من الإعلانات.',
+                amountTitle: 'اختر مبلغ المساهمة',
+                amountHint: 'المبلغ اختياري ويمكنك إرسال أي قيمة تريدها.',
+                custom: 'أدخل المبلغ الذي تريده (USDT)',
+                walletTitle: 'محفظة استقبال المساهمات',
+                addressLabel: 'عنوان المحفظة',
+                copyText: 'نسخ عنوان المحفظة',
+                copied: 'تم نسخ عنوان المحفظة بنجاح ✓',
+                warningTitle: 'تنبيه مهم قبل التحويل',
+                warningText: 'تأكد من إرسال USDT عبر شبكة TRON (TRC20) فقط. إرسال العملات عبر شبكة مختلفة قد يؤدي إلى فقدان أموالك. رمز QR يحتوي على عنوان المحفظة فقط؛ حدد المبلغ في محفظتك قبل الإرسال.',
+                stepsTitle: 'كيفية المساهمة',
+                step1: 'اختر المبلغ الذي ترغب في المساهمة به.',
+                step2: 'انسخ عنوان المحفظة أو امسح رمز QR.',
+                step3: 'أرسل USDT عبر شبكة TRC20 وتأكد من صحة العنوان.',
+                thanksTitle: 'شكرًا لدعمك ❤️',
+                thanksText: 'كل مساهمة تساعدنا على الاستمرار في تطوير MedAtlas وإضافة المزيد من الأجهزة والمعلومات والحلول.'
+            },
+            en: {
+                heroTitle: 'Support MedAtlas 🤗',
+                heroText: 'Your contribution helps us improve MedAtlas and keep biomedical engineering knowledge accessible to everyone, ad-free.',
+                amountTitle: 'Choose your contribution',
+                amountHint: 'The amount is optional. You can send any amount you wish.',
+                custom: 'Enter your amount (USDT)',
+                walletTitle: 'Contribution Wallet',
+                addressLabel: 'Wallet Address',
+                copyText: 'Copy Wallet Address',
+                copied: 'Wallet address copied successfully ✓',
+                warningTitle: 'Important Notice',
+                warningText: 'Send USDT using TRON (TRC20) network only. Sending through another network may result in loss of funds. The QR code contains the wallet address only; enter the amount in your wallet before sending.',
+                stepsTitle: 'How to contribute',
+                step1: 'Choose the amount you wish to contribute.',
+                step2: 'Copy the wallet address or scan the QR code.',
+                step3: 'Send USDT through TRC20 and verify the address.',
+                thanksTitle: 'Thank you for your support ❤️',
+                thanksText: 'Every contribution helps us continue developing MedAtlas and adding more medical devices, information and solutions.'
+            }
+        };
+
+        // ============ تطبيق اللغة ============
+        function applyLanguage(lang) {
+            const t = translations[lang];
+            if (!t) return;
+
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+            const setText = (id, val) => {
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = val;
+            };
+
+            setText('heroTitle', t.heroTitle);
+            setText('heroText', t.heroText);
+            setText('amountTitle', t.amountTitle);
+            setText('amountHint', t.amountHint);
+            setText('walletTitle', t.walletTitle);
+            setText('addressLabel', t.addressLabel);
+            setText('copyText', t.copyText);
+            setText('warningTitle', t.warningTitle);
+            setText('warningText', t.warningText);
+            setText('stepsTitle', t.stepsTitle);
+            setText('step1', t.step1);
+            setText('step2', t.step2);
+            setText('step3', t.step3);
+            setText('thanksTitle', t.thanksTitle);
+            setText('thanksText', t.thanksText);
+
+            const custom = document.getElementById('customAmount');
+            if (custom) custom.placeholder = t.custom;
+
+            localStorage.setItem('medatlasSupportLang', lang);
+            currentLang = lang;
+        }
+
+        function changeLanguage(lang) {
+            applyLanguage(lang);
+        }
+
+        // ============ Dark Mode ============
+        const darkToggle = document.getElementById('darkModeToggle');
+        const lightIcon = document.getElementById('lightIcon');
+        const darkIcon = document.getElementById('darkIcon');
+
+        function setDark(enabled) {
+            if (enabled) {
+                document.body.classList.add('dark-mode');
+                lightIcon.classList.add('active');
+                darkIcon.classList.remove('active');
+                localStorage.setItem('medatlasSupportDark', 'enabled');
+            } else {
+                document.body.classList.remove('dark-mode');
+                lightIcon.classList.remove('active');
+                darkIcon.classList.add('active');
+                localStorage.setItem('medatlasSupportDark', 'disabled');
+            }
+        }
+
+        const savedDark = localStorage.getItem('medatlasSupportDark');
+        setDark(savedDark !== 'disabled');
+
+        darkToggle.addEventListener('click', () => {
+            setDark(!document.body.classList.contains('dark-mode'));
+        });
+
+        // ============ App Bar Scroll Effect ============
+        const appBar = document.getElementById('appBar');
+        window.addEventListener('scroll', () => {
+            appBar.classList.toggle('scrolled', window.scrollY > 20);
+        }, { passive: true });
+
+        // ============ اختيار المبلغ ============
+        function selectAmount(amount, button) {
+            selectedAmount = amount;
+
+            document.querySelectorAll('.amount').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            button.classList.add('active');
+
+            const custom = document.getElementById('customAmount');
+            custom.style.display = 'none';
+            custom.value = '';
+        }
+
+        document.getElementById('customAmount').addEventListener('input', () => {
+            selectedAmount = null;
+            document.querySelectorAll('.amount').forEach(btn => {
+                btn.classList.remove('active');
+            });
+        });
+
+        // ============ نسخ العنوان ============
+        async function copyAddress() {
+            try {
+                await navigator.clipboard.writeText(ADDRESS);
+            } catch (e) {
+                const input = document.createElement('textarea');
+                input.value = ADDRESS;
+                input.style.position = 'fixed';
+                input.style.opacity = '0';
+                document.body.appendChild(input);
+                input.select();
+                document.execCommand('copy');
+                input.remove();
+            }
+
+            const message = translations[currentLang].copied;
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        // ============ توليد QR ============
+        function initializeQR() {
+            const qr = document.getElementById('qrcode');
+            if (typeof QRCode !== 'undefined') {
+                new QRCode(qr, {
+                    text: ADDRESS,
+                    width: 155,
+                    height: 155,
+                    colorDark: '#172B55',
+                    colorLight: '#FFFFFF',
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            } else {
+                qr.textContent = 'QR unavailable';
+            }
+        }
+
+        // ============ التهيئة ============
+        applyLanguage(currentLang);
+        initializeQR();
+    </script>
+</body>
+  </html>
